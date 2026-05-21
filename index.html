@@ -687,12 +687,13 @@ document.addEventListener('touchstart', function(e){
 </head>
 <body>
 <div id="mob-shell">
+<div style="position:fixed;top:0;left:0;right:0;background:red;color:white;text-align:center;z-index:99999999;font-size:18px;font-weight:900;padding:8px;">⚠️ VERSION v5 CHARGÉE</div>
 
 <!-- ╔══════════════════════════════════╗
      ║  MOBILE UI — topbar + bottom nav  ║
      ╚══════════════════════════════════╝ -->
 <div id="mob-topbar">
-  <button class="mob-ham" id="mob-ham-btn" onclick="toggleSidebar()" aria-label="Menu">
+  <button class="mob-ham" id="mob-ham-btn" onclick="alert('HAMBURGER TOUCHÉ')" aria-label="Menu">
     <span></span><span></span><span></span>
   </button>
   <div class="mob-title-wrap">
