@@ -606,19 +606,18 @@ nav{flex:1;padding:12px 0;}
   }
 }
 </style>
-<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js">
+<script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+<script>
 // ══════════════════════════════════════════════════════════════
 // MOBILE — SIDEBAR & NAVIGATION
 // ══════════════════════════════════════════════════════════════
 function toggleSidebar(){
   const sb=document.getElementById('sidebar');
-  if(!sb){alert('ERREUR: sidebar introuvable'); return;}
+  if(!sb) return;
   if(sb.classList.contains('mob-open')){
     closeSidebar();
-    alert('Sidebar FERMÉ');
   } else {
     openSidebar();
-    alert('Sidebar OUVERT — classe mob-open: '+sb.classList.contains('mob-open'));
   }
 }
 function openSidebar(){
@@ -639,7 +638,6 @@ function closeSidebar(){
 }
 
 function mobNav(page){
-  alert('Navigation vers: '+page);
   nav(page);
   closeSidebar();
 }
@@ -665,21 +663,6 @@ function updateSidebarXP(){
 }
 
 
-// onclick suffit sur iOS Safari — touchstart créait un double appel qui annulait l'action
-
-// ══ DIAGNOSTIC GLOBAL v4 ══
-// Badge version visible en haut à droite
-window.addEventListener('load', function(){
-  var v = document.createElement('div');
-  v.style.cssText = 'position:fixed;top:4px;right:4px;background:lime;color:black;font-size:10px;font-weight:900;padding:2px 6px;border-radius:4px;z-index:9999999;';
-  v.textContent = 'v4';
-  document.body.appendChild(v);
-});
-// Capture touchstart (avant click) sur tout le document
-document.addEventListener('touchstart', function(e){
-  var t = e.target;
-  alert('TOUCH v4\nBalise: '+t.tagName+'\nID: '+(t.id||'aucun')+'\nClasse: '+(t.className||'').toString().substring(0,40));
-}, {capture:true, passive:false});
 
 </script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
@@ -687,8 +670,6 @@ document.addEventListener('touchstart', function(e){
 </head>
 <body>
 <div id="mob-shell">
-<div style="position:fixed;top:0;left:0;right:0;background:red;color:white;text-align:center;z-index:99999999;font-size:18px;font-weight:900;padding:8px;">⚠️ VERSION v5 CHARGÉE</div>
-
 <!-- ╔══════════════════════════════════╗
      ║  MOBILE UI — topbar + bottom nav  ║
      ╚══════════════════════════════════╝ -->
