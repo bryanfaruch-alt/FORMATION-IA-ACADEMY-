@@ -299,6 +299,41 @@ nav{flex:1;padding:12px 0;}
 @media(max-width:400px){
   .badges-grid{grid-template-columns:repeat(2,1fr);}
 }
+
+/* ══ PREMIUM ENTERPRISE COMPONENTS ══ */
+.ls-context{background:linear-gradient(135deg,rgba(99,102,241,.1),rgba(59,130,246,.05));border:1px solid rgba(99,102,241,.25);border-radius:14px;padding:20px 22px;position:relative;overflow:hidden;}
+.ls-context::after{content:'PRO';position:absolute;top:12px;right:14px;background:linear-gradient(135deg,#6366f1,#3b82f6);color:#fff;font-size:9px;font-weight:800;letter-spacing:1.5px;padding:3px 9px;border-radius:99px;}
+.ls-context .ls-title{color:#818cf8;}
+.ls-stats-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.ls-stat{flex:1;min-width:90px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:12px 10px;text-align:center;}
+.ls-stat strong{display:block;font-size:22px;font-weight:900;background:var(--gradient);-webkit-background-clip:text;-webkit-text-fill-color:transparent;line-height:1.2;}
+.ls-stat span{font-size:10px;color:var(--muted);letter-spacing:.3px;line-height:1.4;display:block;margin-top:3px;}
+.ls-pro-example{background:linear-gradient(135deg,rgba(245,158,11,.07),rgba(249,115,22,.03));border:1px solid rgba(245,158,11,.2);border-radius:14px;padding:20px 22px;}
+.ls-pro-example .ls-title{color:#fbbf24;}
+.ls-case-study{background:linear-gradient(135deg,rgba(239,68,68,.05),transparent);border:1px solid rgba(239,68,68,.15);border-left:4px solid #ef4444;border-radius:14px;padding:20px 22px;}
+.ls-case-study .ls-title{color:#f87171;}
+.ls-project{background:linear-gradient(135deg,rgba(6,182,212,.08),rgba(59,130,246,.04));border:2px dashed rgba(6,182,212,.3);border-radius:14px;padding:22px 24px;}
+.ls-project .ls-title{color:var(--cyan);font-size:15px;}
+.ls-note{background:rgba(148,163,184,.05);border:1px solid rgba(148,163,184,.12);border-left:3px solid #475569;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:var(--muted2);line-height:1.7;}
+.concept-table{width:100%;border-collapse:collapse;font-size:13px;margin:14px 0;border-radius:10px;overflow:hidden;}
+.concept-table th{background:rgba(59,130,246,.15);color:#93c5fd;font-weight:700;padding:11px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,.08);}
+.concept-table td{padding:9px 14px;border-bottom:1px solid rgba(255,255,255,.04);color:var(--text2);vertical-align:top;line-height:1.6;}
+.concept-table tr:hover td{background:rgba(255,255,255,.02);}
+.code-label{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--muted);margin-bottom:5px;margin-top:16px;}
+.ls-meta-bar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px;padding-bottom:18px;border-bottom:1px solid var(--border);}
+.ls-meta-bar span{font-size:11px;padding:4px 11px;border-radius:99px;font-weight:600;}
+.ls-meta-time{background:rgba(255,255,255,.05);color:var(--muted2);}
+.ls-meta-diff{background:rgba(16,185,129,.1);color:#34d399;}
+.ls-meta-xp{background:rgba(59,130,246,.1);color:#93c5fd;}
+.out-label{font-size:10px;color:var(--green);font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-top:14px;margin-bottom:5px;}
+.out-block{background:rgba(0,0,0,.5);border:1px solid rgba(16,185,129,.15);border-radius:8px;padding:12px 16px;font-family:monospace;font-size:13px;color:#34d399;line-height:1.9;white-space:pre;}
+.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:14px 0;}
+.compare-good{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.2);border-radius:10px;padding:14px;}
+.compare-bad{background:rgba(239,68,68,.06);border:1px solid rgba(239,68,68,.2);border-radius:10px;padding:14px;}
+.compare-label{font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;margin-bottom:8px;}
+.compare-good .compare-label{color:#34d399;}
+.compare-bad .compare-label{color:#f87171;}
+
 </style>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
@@ -966,207 +1001,1277 @@ function nextLesson(){
 function getLessonContent(id, title, lv, mod, lesson){
   const contents = {
 'N0M1L1': `
-<div class="ls ls-why">
-  <div class="ls-title">💡 POURQUOI CETTE LEÇON EST IMPORTANTE</div>
-  <div class="ls-content"><p>Avant de commencer à apprendre quoi que ce soit, tu dois comprendre <strong>ce qu'est vraiment Python</strong> — pas une définition compliquée, mais une vraie explication de ce que c'est et pourquoi tu vas l'adorer.</p></div>
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 12 min</span><span class="ls-meta-diff">🟢 Débutant absolu</span><span class="ls-meta-xp">+25 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 POURQUOI APPRENDRE PYTHON EN 2025 ?</div>
+<div class="ls-content">
+<p>Python est le langage de programmation le plus utilisé au monde. Toute l'IA moderne — ChatGPT, Claude, Gemini, Mistral — est construite avec Python. Maîtriser Python en 2025, c'est parler la langue du futur numérique.</p>
+<div class="ls-stats-row">
+<div class="ls-stat"><strong>#1</strong><span>Langage mondial TIOBE 2024</span></div>
+<div class="ls-stat"><strong>95%</strong><span>Des projets IA utilisent Python</span></div>
+<div class="ls-stat"><strong>+600k</strong><span>Offres d'emploi/an</span></div>
+<div class="ls-stat"><strong>65 000€</strong><span>Salaire moyen France</span></div>
 </div>
+</div>
+</div>
+
 <div class="ls ls-simple">
-  <div class="ls-title">🧠 EXPLICATION ULTRA SIMPLE</div>
-  <div class="ls-content">
-    <p>Python, c'est <em>un langage</em> pour parler aux ordinateurs. Exactement comme le français est un langage pour parler aux humains.</p>
-    <p>Le problème ? Un ordinateur ne comprend pas le français. Il ne comprend que des suites de 0 et de 1. Python sert de <strong>traducteur</strong> entre toi (qui penses en humain) et l'ordinateur (qui ne comprend que des chiffres).</p>
-    <blockquote>Python = un traducteur entre ton cerveau humain et l'ordinateur.</blockquote>
-  </div>
+<div class="ls-title">🧠 LE CONCEPT EN 30 SECONDES</div>
+<div class="ls-content">
+<p>Un ordinateur ne comprend que des 0 et des 1. Toi, tu penses en français. <strong>Python est le traducteur universel</strong> entre ton cerveau et la machine.</p>
+<p>Pense à un interprète lors d'une réunion internationale : tu parles français, l'interprète traduit en japonais en temps réel. Python fait exactement ça — il traduit tes instructions humaines en langage machine, instantanément.</p>
+<div class="ls-note"><strong>L'analogie fondamentale :</strong> Python = interprète entre toi (humain) et l'ordinateur (machine). Tu parles simplement, Python traduit parfaitement.</div>
 </div>
+</div>
+
 <div class="ls ls-detailed">
-  <div class="ls-title">📖 EXPLICATION DÉTAILLÉE</div>
-  <div class="ls-content">
-    <p>Python a été créé en 1991 par <strong>Guido van Rossum</strong>, un programmeur néerlandais. Son objectif était simple : créer un langage de programmation <em>aussi facile à lire que de l'anglais.</em></p>
-    <p>Il a réussi. Regarde ce code Python :</p>
-    <pre>if age >= 18:
+<div class="ls-title">📖 PYTHON EN PROFONDEUR</div>
+<div class="ls-content">
+<p>Python a été créé en <strong>1991</strong> par <strong>Guido van Rossum</strong>, un programmeur néerlandais. Son objectif : rendre la programmation aussi lisible que de l'anglais naturel.</p>
+<p>Résultat ? Regarde cette comparaison pour afficher "Bonjour" 5 fois :</p>
+<table class="concept-table">
+<tr><th>Langage</th><th>Code requis</th><th>Difficulté</th></tr>
+<tr><td>C++</td><td>12 lignes avec #include, main(), cout, endl...</td><td>🔴 Complexe</td></tr>
+<tr><td>Java</td><td>8 lignes avec class, public static void main...</td><td>🟠 Difficile</td></tr>
+<tr><td>Python</td><td><code>for i in range(5): print("Bonjour")</code></td><td>🟢 Simple</td></tr>
+</table>
+<p>Python est guidé par une philosophie appelée le <em>Zen de Python</em> : "Il doit y avoir une façon évidente de faire les choses." Cette lisibilité le rend idéal pour les équipes et pour l'apprentissage.</p>
+<p><strong>Qui utilise Python aujourd'hui ?</strong></p>
+<ul>
+<li><strong>Google</strong> — moteur de recherche, YouTube, traduction automatique</li>
+<li><strong>Netflix</strong> — algorithmes de recommandation, compression vidéo</li>
+<li><strong>Instagram</strong> — backend complet (1 milliard d'utilisateurs)</li>
+<li><strong>NASA</strong> — analyse de données spatiales, contrôle de missions</li>
+<li><strong>OpenAI</strong> — ChatGPT, DALL-E, Whisper, toute leur infrastructure</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 TON PREMIER CODE PYTHON</div>
+<div class="ls-content">
+<p>Même sans jamais avoir programmé, tu peux comprendre ce code :</p>
+<div class="code-label">Exemple 1 — Ultra simple</div>
+<pre>print("Bonjour ! Je m'appelle Python.")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Bonjour ! Je m'appelle Python.</div>
+<div class="code-label">Exemple 2 — Une vraie logique</div>
+<pre>age = 27
+if age >= 18:
     print("Tu es majeur")
 else:
     print("Tu es mineur")</pre>
-    <p>Tu peux presque le lire comme une phrase française ! C'est ça la magie de Python — il est conçu pour les humains, pas pour les machines.</p>
-  </div>
+<div class="out-label">Résultat</div>
+<div class="out-block">Tu es majeur</div>
+<p style="margin-top:12px">Tu peux lire ce code comme du français. C'est la magie de Python.</p>
 </div>
-<div class="ls ls-example">
-  <div class="ls-title">💡 EXEMPLE CONCRET</div>
-  <div class="ls-content">
-    <p>Voici ce que Python peut faire en 3 lignes :</p>
-    <pre>nom = input("Comment tu t'appelles ? ")
-age = int(input("Quel âge as-tu ? "))
-print("Bonjour " + nom + " ! Dans 10 ans tu auras " + str(age+10) + " ans.")</pre>
-    <p>C'est un vrai programme interactif. Facile à lire, facile à comprendre.</p>
-  </div>
 </div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 EXEMPLE PROFESSIONNEL — CABINET D'ORTHODONTIE</div>
+<div class="ls-content">
+<p>Voici ce que Python peut faire en contexte médical, avec seulement 10 lignes :</p>
+<div class="code-label">Fiche patient automatisée</div>
+<pre>nom = "Martin Dupont"
+age = 14
+traitement = "Appareil multi-bagues"
+duree = 18       # mois
+cout_mensuel = 120  # euros
+
+cout_total = duree * cout_mensuel
+print("=== FICHE PATIENT ===")
+print(f"Patient : {nom}, {age} ans")
+print(f"Traitement : {traitement}")
+print(f"Duree prevue : {duree} mois")
+print(f"Cout total estime : {cout_total} euros")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">=== FICHE PATIENT ===
+Patient : Martin Dupont, 14 ans
+Traitement : Appareil multi-bagues
+Duree prevue : 18 mois
+Cout total estime : 2160 euros</div>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ CE QU'IL FAUT ABSOLUMENT SAVOIR</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><strong>Python est 100% gratuit et open source</strong> — aucune licence, même pour un usage professionnel ou en entreprise</li>
+<li><strong>L'indentation (espaces) est obligatoire</strong> — Python utilise les espaces pour structurer le code, pas des accolades {} comme d'autres langages</li>
+<li><strong>Toujours utiliser Python 3</strong> — Python 2 est obsolète depuis 2020, ne l'apprends pas</li>
+<li><strong>500 000+ packages disponibles</strong> — si tu penses à une fonctionnalité, quelqu'un l'a déjà créée pour Python</li>
+<li><strong>La communauté est immense</strong> — Stack Overflow, Reddit, Discord : des millions de personnes pour t'aider</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-errors">
+<div class="ls-title">❌ IDÉES REÇUES À ABANDONNER</div>
+<div class="ls-content">
+<ul class="errors-list">
+<li><strong>"Il faut être un génie pour programmer"</strong> → FAUX. Python a été conçu précisément pour les débutants complets.</li>
+<li><strong>"Python c'est réservé aux data scientists"</strong> → FAUX. Automatisation, médecine, finance, web, jeux — Python est partout.</li>
+<li><strong>"Je dois tout mémoriser"</strong> → FAUX. Les développeurs seniors consultent la documentation quotidiennement. Comprendre, pas mémoriser.</li>
+<li><strong>"Python est trop lent pour le professionnel"</strong> → FAUX. Instagram, Dropbox, YouTube backend — tous en Python.</li>
+</ul>
+</div>
+</div>
+
 <div class="ls ls-summary">
-  <div class="ls-title">📌 RÉSUMÉ</div>
-  <div class="ls-content">
-    <ul class="summary-points">
-      <li>Python est un langage de programmation créé pour être simple à lire</li>
-      <li>Il traduit tes instructions en langage que l'ordinateur comprend</li>
-      <li>Il est utilisé par toutes les grandes IA du monde</li>
-      <li>C'est le langage #1 mondial depuis 3 ans</li>
-    </ul>
-  </div>
+<div class="ls-title">📌 RÉSUMÉ — CE QUE TU DOIS RETENIR</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Python = traducteur entre ton cerveau humain et l'ordinateur</li>
+<li>Créé en 1991, aujourd'hui le langage #1 mondial</li>
+<li>Langage officiel de l'IA : utilisé par OpenAI, Google DeepMind, etc.</li>
+<li>Gratuit, open source, communauté de plusieurs millions de développeurs</li>
+<li>Readable : on peut presque lire Python comme de l'anglais naturel</li>
+</ul>
 </div>
+</div>
+
 <div class="ls ls-quiz">
-  <div class="ls-title">✅ QUIZ</div>
-  <div class="quiz-q">
-    <div class="quiz-q-text">Python, c'est :</div>
-    <div class="quiz-options">
-      <div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Un logiciel pour faire des serpents en 3D</div>
-      <div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Un langage de programmation simple et lisible</div>
-      <div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Un système d'exploitation comme Windows</div>
-    </div>
-    <div class="quiz-explanation">✅ Exact ! Python est un langage de programmation conçu pour être facile à lire et comprendre.</div>
-  </div>
-</div>`,
+<div class="ls-title">✅ QUIZ DE VALIDATION</div>
+<div class="quiz-q">
+<div class="quiz-q-text">1. Python a été créé par :</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Bill Gates en 1975</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Guido van Rossum en 1991</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Linus Torvalds en 1995</div>
+</div>
+<div class="quiz-explanation">✅ Guido van Rossum, programmeur néerlandais, a créé Python en 1991 avec l'objectif de le rendre lisible comme de l'anglais naturel.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">2. Quel est le rôle principal de Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Créer uniquement des sites web</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Traduire des instructions humaines en langage machine</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Gérer les fichiers du disque dur</div>
+</div>
+<div class="quiz-explanation">✅ Python est un traducteur entre la pensée humaine et l'ordinateur. Il traduit tes instructions en langage machine (0 et 1).</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">3. Quel pourcentage des projets IA utilisent Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Environ 30%</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>Environ 60%</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">C</div>Plus de 95%</div>
+</div>
+<div class="quiz-explanation">✅ Python est utilisé dans plus de 95% des projets d'intelligence artificielle. C'est le standard absolu du secteur.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">4. Python est-il gratuit pour un usage professionnel ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">A</div>Oui, totalement gratuit et open source</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>Non, une licence entreprise est requise</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Gratuit seulement pour les particuliers</div>
+</div>
+<div class="quiz-explanation">✅ Python est 100% gratuit et open source, sans aucune restriction d'usage commercial. C'est l'une de ses grandes forces.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE PRATIQUE</div>
+<div class="ls-content">
+<p><strong>Objectif :</strong> Écrire ton premier programme Python — une présentation personnelle professionnelle.</p>
+<p>Ton programme doit afficher :</p>
+<ul>
+<li>Ton prénom et ton âge</li>
+<li>Ton domaine d'études ou métier</li>
+<li>Une raison pour laquelle tu apprends Python</li>
+<li>Un objectif que tu veux atteindre avec Python</li>
+</ul>
+<div class="code-label">Structure de départ</div>
+<pre>prenom = "Bryan"
+age = 27
+metier = "Etudiant en orthodontie"
+raison = "automatiser des taches repetitives"
+objectif = "analyser des donnees patients"
+
+print("=== MA PRESENTATION ===")
+print(f"Je m'appelle {prenom}, j'ai {age} ans.")
+print(f"Je suis : {metier}.")
+print(f"J'apprends Python pour : {raison}.")
+print(f"Mon objectif : {objectif}.")</pre>
+<div class="ls-note">Teste ce code sur <strong>repl.it</strong> (gratuit, en ligne, sans installation) ou dans IDLE si Python est déjà installé.</div>
+</div>
+</div>
+
+`,
 
 'N1M1L1': `
-<div class="ls ls-why">
-  <div class="ls-title">💡 POURQUOI C'EST FONDAMENTAL</div>
-  <div class="ls-content"><p>Les variables sont <strong>la base de TOUT</strong> en programmation. Sans variables, un programme ne peut rien mémoriser. C'est la première chose à absolument maîtriser.</p></div>
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 12 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+30 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 LES VARIABLES — BASE DE TOUT PROGRAMME</div>
+<div class="ls-content">
+<p>Sans variables, un programme est aveugle et amnésique. Il ne peut pas se souvenir du nom d'un patient, de son âge, d'un résultat de calcul. <strong>Les variables sont la mémoire de ton programme.</strong> C'est la notion la plus fondamentale de toute la programmation — elle s'applique dans tous les langages.</p>
 </div>
+</div>
+
 <div class="ls ls-simple">
-  <div class="ls-title">🧠 L'ANALOGIE DES BOÎTES</div>
-  <div class="ls-content">
-    <p>Imagine que tu as des <em>boîtes de rangement</em>. Sur chaque boîte, tu écris une étiquette. Dans chaque boîte, tu mets quelque chose.</p>
-    <p>Une variable, c'est exactement ça :</p>
-    <ul>
-      <li>L'<strong>étiquette</strong> = le nom de la variable</li>
-      <li>Le <strong>contenu</strong> = la valeur stockée</li>
-    </ul>
-    <pre>age = 27        # boîte "age" contient 27
-nom = "Bryan"   # boîte "nom" contient "Bryan"
-ville = "Nice"  # boîte "ville" contient "Nice"</pre>
-  </div>
+<div class="ls-title">🧠 L'ANALOGIE DES BOÎTES DE RANGEMENT</div>
+<div class="ls-content">
+<p>Imagine que tu as des boîtes de rangement dans ton cabinet. Sur chaque boîte, tu colles une étiquette. Dans chaque boîte, tu mets quelque chose.</p>
+<ul>
+<li>L'<strong>étiquette</strong> = le nom de la variable</li>
+<li>Le <strong>contenu</strong> = la valeur stockée</li>
+<li>La <strong>boîte</strong> = l'espace mémoire alloué</li>
+</ul>
+<pre>age = 27        # boite "age" contient 27
+nom = "Bryan"   # boite "nom" contient "Bryan"
+ville = "Nice"  # boite "ville" contient "Nice"</pre>
+<div class="ls-note"><strong>Important :</strong> le signe <code>=</code> en Python ne signifie pas "égal" comme en mathématiques. Il signifie <em>"met cette valeur dans cette boîte"</em>.</div>
 </div>
+</div>
+
 <div class="ls ls-detailed">
-  <div class="ls-title">📖 COMMENT ÇA MARCHE</div>
-  <div class="ls-content">
-    <p>Le signe <code>=</code> en Python ne signifie pas "égal" comme en maths. Il signifie <strong>"met dans la boîte"</strong>.</p>
-    <p><code>age = 27</code> se lit : "mets la valeur 27 dans la boîte appelée age".</p>
-    <p>Ensuite, tu peux utiliser cette boîte n'importe quand :</p>
-    <pre>age = 27
-print(age)        # affiche : 27
-print(age + 10)   # affiche : 37
-age = 30          # change le contenu de la boîte
-print(age)        # affiche : 30</pre>
-    <p>La boîte peut changer de contenu à tout moment — c'est pour ça qu'on appelle ça une <em>variable</em> (qui varie).</p>
-  </div>
+<div class="ls-title">📖 COMMENT FONCTIONNENT LES VARIABLES</div>
+<div class="ls-content">
+<p>Quand tu écris <code>age = 27</code>, Python fait 3 choses :</p>
+<ol>
+<li><strong>Crée un espace en mémoire</strong> (RAM) pour stocker la valeur 27</li>
+<li><strong>Stocke la valeur 27</strong> dans cet espace</li>
+<li><strong>Crée un étiquette "age"</strong> qui pointe vers cet espace</li>
+</ol>
+<p>Ensuite, chaque fois que tu utilises <code>age</code>, Python va chercher dans sa mémoire ce que contient cette étiquette.</p>
+<pre>age = 27
+print(age)        # Python cherche "age" → trouve 27 → affiche 27
+print(age + 10)   # 27 + 10 = 37
+age = 30          # CHANGE le contenu de la boite "age"
+print(age)        # maintenant affiche 30</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">27
+37
+30</div>
+<p style="margin-top:12px">La variable <em>varie</em> — son contenu peut changer à tout moment. D'où le nom "variable".</p>
 </div>
+</div>
+
 <div class="ls ls-example">
-  <div class="ls-title">🏥 EXEMPLE : FICHE PATIENT</div>
-  <div class="ls-content">
-    <p>En orthodontie, tu pourrais utiliser des variables pour stocker les infos d'un patient :</p>
-    <pre>nom_patient = "Martin Dupont"
-age_patient = 14
-traitement = "Appareil fixe"
-duree_mois = 18
+<div class="ls-title">💻 CRÉER ET UTILISER DES VARIABLES</div>
+<div class="ls-content">
+<div class="code-label">Différents types de valeurs</div>
+<pre>nom = "Martin"       # texte (string)
+age = 14             # nombre entier (int)
+taille = 1.68        # nombre decimal (float)
+majeur = False       # vrai/faux (boolean)
 
-print("Patient :", nom_patient)
-print("Âge :", age_patient, "ans")
-print("Traitement :", traitement)
-print("Durée :", duree_mois, "mois")</pre>
-  </div>
+print(nom)           # Martin
+print(age)           # 14
+print(taille)        # 1.68
+print(majeur)        # False</pre>
+
+<div class="code-label">Variables dans des calculs</div>
+<pre>prix_seance = 80
+nombre_seances = 12
+remise = 0.10        # 10%
+
+cout_brut = prix_seance * nombre_seances
+remise_montant = cout_brut * remise
+cout_final = cout_brut - remise_montant
+
+print(f"Cout brut : {cout_brut} euros")
+print(f"Remise : {remise_montant} euros")
+print(f"Cout final : {cout_final} euros")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Cout brut : 960 euros
+Remise : 96.0 euros
+Cout final : 864.0 euros</div>
 </div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 CAS PROFESSIONNEL — DOSSIER PATIENT</div>
+<div class="ls-content">
+<pre># Informations patient
+nom_patient = "Sophie Laurent"
+age_patient = 16
+poids_kg = 52.3
+traitement = "Aligneurs invisibles"
+duree_mois = 14
+tarif_mensuel = 110
+
+# Calculs automatiques
+age_fin_traitement = age_patient + (duree_mois // 12)
+cout_total = duree_mois * tarif_mensuel
+cout_par_semaine = cout_total / (duree_mois * 4)
+
+# Affichage du dossier
+print("=" * 45)
+print("  DOSSIER PATIENT — CONFIDENTIEL")
+print("=" * 45)
+print(f"Nom       : {nom_patient}")
+print(f"Age       : {age_patient} ans")
+print(f"Traitement: {traitement}")
+print(f"Duree     : {duree_mois} mois")
+print(f"Cout total: {cout_total} euros")
+print(f"Soit      : {cout_par_semaine:.2f} euros/semaine")
+print(f"Age fin   : {age_fin_traitement} ans environ")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">=============================================
+  DOSSIER PATIENT — CONFIDENTIEL
+=============================================
+Nom       : Sophie Laurent
+Age       : 16 ans
+Traitement: Aligneurs invisibles
+Duree     : 14 mois
+Cout total: 1540 euros
+Soit      : 27.50 euros/semaine
+Age fin   : 17 ans environ</div>
+</div>
+</div>
+
 <div class="ls ls-tips">
-  <div class="ls-title">⚡ BONNES PRATIQUES</div>
-  <div class="ls-content">
-    <ul class="tips-list">
-      <li>Utilise des noms <strong>clairs et descriptifs</strong> : préfère <code>age_patient</code> à <code>a</code></li>
-      <li>Utilise le <strong>snake_case</strong> : des mots séparés par des underscores</li>
-      <li>Pas d'espaces, pas d'accents dans les noms de variables</li>
-      <li>Les noms sont sensibles à la casse : <code>Age</code> et <code>age</code> sont deux variables différentes</li>
-    </ul>
-  </div>
+<div class="ls-title">⚡ BONNES PRATIQUES PROFESSIONNELLES</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><strong>Noms descriptifs</strong> — <code>age_patient</code> est bien mieux que <code>a</code> ou <code>ap</code></li>
+<li><strong>snake_case</strong> — en Python, les mots sont séparés par des underscores : <code>nom_de_famille</code></li>
+<li><strong>Pas de majuscule au début</strong> — <code>age</code> pas <code>Age</code> (les majuscules sont pour les classes)</li>
+<li><strong>Variables en MAJUSCULES = constantes</strong> — <code>TVA = 0.20</code> signale que cette valeur ne doit pas changer</li>
+<li><strong>Initialise avant d'utiliser</strong> — toujours créer la variable avant de l'utiliser dans un calcul</li>
+</ul>
 </div>
-<div class="ls ls-quiz">
-  <div class="ls-title">✅ QUIZ</div>
-  <div class="quiz-q">
-    <div class="quiz-q-text">Que contient la variable "score" après ce code ?<br><code>score = 10<br>score = score + 5</code></div>
-    <div class="quiz-options">
-      <div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>10</div>
-      <div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>15</div>
-      <div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>5</div>
-    </div>
-    <div class="quiz-explanation">✅ Correct ! On prend la valeur actuelle (10), on ajoute 5, et on remet le résultat (15) dans la même boîte.</div>
-  </div>
 </div>
-<div class="ls ls-exercise">
-  <div class="ls-title">🎯 EXERCICE PRATIQUE</div>
-  <div class="ls-content">
-    <p>Crée 4 variables qui te décrivent : ton prénom, ton âge, ta profession, ta ville. Affiche-les avec print().</p>
-    <pre># Exemple de solution :
-prenom = "Bryan"
-age = 27
-profession = "Étudiant orthodontiste"
-ville = "Nice"
 
-print("Je m'appelle", prenom)
-print("J'ai", age, "ans")
-print("Je suis", profession)
-print("Je vis à", ville)</pre>
-  </div>
-</div>`,
+<div class="ls ls-errors">
+<div class="ls-title">❌ ERREURS CLASSIQUES</div>
+<div class="ls-content">
+<div class="compare-grid">
+<div class="compare-bad">
+<div class="compare-label">❌ Mauvais</div>
+<pre>print(age)      # NameError !
+age = 27        # variable créée trop tard</pre>
+</div>
+<div class="compare-good">
+<div class="compare-label">✅ Correct</div>
+<pre>age = 27        # créée d'abord
+print(age)      # puis utilisée</pre>
+</div>
+</div>
+<div class="compare-grid">
+<div class="compare-bad">
+<div class="compare-label">❌ Mauvais</div>
+<pre>mon age = 27    # espaces interdits</pre>
+</div>
+<div class="compare-good">
+<div class="compare-label">✅ Correct</div>
+<pre>mon_age = 27    # underscore obligatoire</pre>
+</div>
+</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Une variable = une boîte avec une étiquette, contenant une valeur</li>
+<li>Le signe = signifie "met cette valeur dans cette variable" (pas "égal")</li>
+<li>Une variable peut changer de valeur à tout moment</li>
+<li>Utilise des noms descriptifs en snake_case (mots_séparés_par_underscores)</li>
+<li>Crée toujours la variable AVANT de l'utiliser</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que signifie le signe = en Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Teste si deux valeurs sont identiques</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Met une valeur dans une variable</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Compare deux expressions mathématiques</div>
+</div>
+<div class="quiz-explanation">✅ En Python, = est l'opérateur d'affectation. age = 27 signifie "mets la valeur 27 dans la variable age". Pour tester l'égalité, Python utilise ==.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Lequel de ces noms de variable est correct en Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>mon age</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>MonAge</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">C</div>mon_age</div>
+</div>
+<div class="quiz-explanation">✅ En Python, on utilise le snake_case : mots séparés par des underscores, tout en minuscules. "mon age" contient un espace (interdit) et "MonAge" est du PascalCase (réservé aux classes).</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que se passe-t-il si tu utilises une variable avant de la créer ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Python l'initialise à 0 automatiquement</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Python génère une NameError</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Python affiche "undefined"</div>
+</div>
+<div class="quiz-explanation">✅ Python lève une NameError si tu essaies d'utiliser une variable qui n'existe pas encore. Il faut toujours créer (assigner) une variable avant de l'utiliser.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quelle convention signale qu'une variable ne doit pas être modifiée ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Commencer par un underscore : _tva</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Tout en majuscules : TVA = 0.20</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Entourer de guillemets : "TVA"</div>
+</div>
+<div class="quiz-explanation">✅ Par convention, les variables entièrement en MAJUSCULES sont des constantes — des valeurs qui ne doivent pas être modifiées. C'est une convention, Python ne l'impose pas techniquement.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — CALCULATEUR DE TRAITEMENT</div>
+<div class="ls-content">
+<p>Crée un programme qui calcule le coût d'un traitement orthodontique :</p>
+<ol>
+<li>Crée des variables pour : nom du patient, durée en mois, tarif mensuel, taux de remise</li>
+<li>Calcule : coût total, montant de la remise, coût final</li>
+<li>Affiche un récapitulatif formaté avec tous ces éléments</li>
+</ol>
+<div class="ls-note">Teste avec : durée = 18 mois, tarif = 120€/mois, remise = 15%</div>
+</div>
+</div>
+
+<div class="ls ls-project">
+<div class="ls-title">🚀 MINI-PROJET — SYSTÈME DE FACTURATION BASIQUE</div>
+<div class="ls-content">
+<p>Crée un programme complet de facturation pour un cabinet médical :</p>
+<ul>
+<li>Variables : nom cabinet, nom patient, date, liste de 3 prestations avec prix</li>
+<li>Calcule : sous-total, TVA (20%), total TTC</li>
+<li>Affiche : une facture formatée avec en-tête, détail des prestations, et total</li>
+<li>Bonus : calcule le reste à payer si le patient a déjà versé une avance</li>
+</ul>
+<div class="ls-note">C'est un programme qu'un cabinet pourrait réellement utiliser — félicitations d'avance, c'est ton premier outil professionnel !</div>
+</div>
+</div>
+
+`,
 
 'N0M1L2': `
-<div class="ls ls-why"><div class="ls-title">💡 POURQUOI CONNAÎTRE L'HISTOIRE ?</div><div class="ls-content"><p>Comprendre d'où vient Python t'aide à comprendre <strong>pourquoi il est conçu ainsi</strong> — et pourquoi il est si facile à apprendre.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 L'HISTOIRE EN SIMPLE</div><div class="ls-content"><p>Python a été créé par <strong>Guido van Rossum</strong>, un programmeur néerlandais, en <strong>1989</strong>. Il voulait un langage qu'il utiliserait lui-même avec plaisir. Il l'a nommé "Python" en hommage à son groupe comique préféré : les <em>Monty Python</em> — une troupe britannique des années 70.</p><blockquote>Python ne vient pas du serpent, mais d'un groupe de comédiens anglais !</blockquote></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LES GRANDES DATES</div><div class="ls-content"><pre>1989 → Guido crée Python pendant ses vacances
-1991 → Python 1.0 publié
-2000 → Python 2.0 — popularité universitaire
-2008 → Python 3.0 — modernisation
-2015+ → Explosion de l'IA → Python devient #1 mondial</pre><p>Aujourd'hui : Google, NASA, Netflix, OpenAI (ChatGPT) et Anthropic (Claude) utilisent Python.</p></div></div>
-<div class="ls ls-summary"><div class="ls-title">📌 RÉSUMÉ</div><div class="ls-content"><ul class="summary-points"><li>Créé par Guido van Rossum en 1989</li><li>Le nom vient des Monty Python, pas du serpent</li><li>Python 3 est la version actuelle</li><li>Utilisé par toutes les grandes IA du monde</li></ul></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">D'où vient le nom "Python" ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Du serpent python, symbole de puissance</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Du groupe comique Monty Python</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>D'un acronyme informatique</div></div><div class="quiz-explanation">✅ Guido van Rossum était fan des Monty Python. Rien à voir avec le reptile !</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 8 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+20 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 POURQUOI CONNAÎTRE L'HISTOIRE ?</div>
+<div class="ls-content">
+<p>Comprendre d'où vient Python te permet de comprendre <strong>pourquoi il est conçu ainsi</strong> — sa philosophie, ses choix techniques, et pourquoi il est devenu dominant face à des dizaines de concurrents.</p>
+</div>
+</div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 L'ESSENTIEL EN 1 MINUTE</div>
+<div class="ls-content">
+<p>En 1989, un programmeur néerlandais nommé Guido van Rossum passe ses vacances de Noël à créer un nouveau langage de programmation. Son objectif : rendre la programmation <strong>agréable et lisible</strong>. Il choisit le nom "Python" en hommage aux Monty Python, le groupe comique britannique qu'il adore.</p>
+<div class="ls-note"><strong>Fun fact :</strong> Python n'est pas nommé d'après le serpent ! C'est une référence au groupe comique Monty Python's Flying Circus.</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LA CHRONOLOGIE COMPLÈTE</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Année</th><th>Événement clé</th><th>Impact</th></tr>
+<tr><td>1989</td><td>Guido commence Python pendant ses vacances de Noël</td><td>Naissance d'un langage révolutionnaire</td></tr>
+<tr><td>1991</td><td>Python 0.9.0 publié — première version officielle</td><td>Premières fonctionnalités : classes, exceptions, listes</td></tr>
+<tr><td>1994</td><td>Python 1.0 — version stable majeure</td><td>lambda, map, filter, reduce introduits</td></tr>
+<tr><td>2000</td><td>Python 2.0 — list comprehensions, garbage collection</td><td>Adoption massive dans le monde académique</td></tr>
+<tr><td>2008</td><td>Python 3.0 — réécriture majeure, rupture de compatibilité</td><td>Python moderne, corrige 15 ans d'imperfections</td></tr>
+<tr><td>2010s</td><td>Explosion de l'IA et du Machine Learning</td><td>NumPy, pandas, TensorFlow, scikit-learn = Python standard IA</td></tr>
+<tr><td>2021</td><td>Python devient #1 mondial (TIOBE Index)</td><td>Dépasse Java et C pour la première fois</td></tr>
+<tr><td>2024</td><td>Python consolide sa position #1</td><td>Standard de facto de l'ère IA</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 LE ZEN DE PYTHON</div>
+<div class="ls-content">
+<p>Tape ceci dans Python pour lire la philosophie officielle du langage :</p>
+<pre>import this</pre>
+<div class="out-label">Résultat (extrait)</div>
+<div class="out-block">Beautiful is better than ugly.
+Explicit is better than implicit.
+Simple is better than complex.
+Readability counts.
+There should be one obvious way to do it.</div>
+<p style="margin-top:12px">Ces principes expliquent pourquoi Python est si agréable à utiliser et à lire.</p>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 PYTHON 2 VS PYTHON 3 — COMPRENDRE LA RUPTURE</div>
+<div class="ls-content">
+<p>En 2008, Guido et son équipe ont pris une décision radicale : réécrire Python de zéro (Python 3) en cassant la compatibilité avec Python 2. Pourquoi ? Pour corriger des erreurs de conception qui bloquaient l'évolution du langage.</p>
+<table class="concept-table">
+<tr><th>Caractéristique</th><th>Python 2</th><th>Python 3</th></tr>
+<tr><td>Statut</td><td>❌ Obsolète depuis 2020</td><td>✅ Version officielle</td></tr>
+<tr><td>print</td><td><code>print "bonjour"</code></td><td><code>print("bonjour")</code></td></tr>
+<tr><td>Division entière</td><td><code>5/2 = 2</code></td><td><code>5/2 = 2.5</code></td></tr>
+<tr><td>Unicode</td><td>Partiel, compliqué</td><td>Natif, complet</td></tr>
+<tr><td>Recommendation</td><td>N'apprends jamais Python 2</td><td>Toujours utiliser Python 3</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ RÈGLES D'OR</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><strong>Toujours Python 3</strong> — jamais Python 2, même si tu vois d'anciens tutoriels</li>
+<li><strong>Vérifie ta version</strong> — tape <code>python --version</code> dans ton terminal pour confirmer</li>
+<li><strong>La philosophie compte</strong> — Python valorise la lisibilité sur la performance brute</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Python créé par Guido van Rossum en 1989, publié en 1991</li>
+<li>Nommé d'après les Monty Python — pas le serpent !</li>
+<li>Python 2 est mort en 2020 — toujours utiliser Python 3</li>
+<li>Philosophie : lisibilité, simplicité, un problème = une solution évidente</li>
+<li>Devenu #1 mondial en 2021 grâce à l'explosion de l'IA</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Python est nommé d'après :</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Le serpent python</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Le groupe comique Monty Python</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Un personnage de film</div>
+</div>
+<div class="quiz-explanation">✅ Guido van Rossum était fan de Monty Python's Flying Circus. Il voulait un nom court et un peu mystérieux.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quelle version de Python dois-tu toujours utiliser ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Python 2</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Python 3</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Les deux selon le projet</div>
+</div>
+<div class="quiz-explanation">✅ Python 2 est officiellement mort depuis le 1er janvier 2020. Python 3 est la seule version active et maintenue.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Python est devenu le langage #1 mondial en :</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>2008</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>2015</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">C</div>2021</div>
+</div>
+<div class="quiz-explanation">✅ En 2021, Python a dépassé Java et C pour devenir le langage #1 de l'index TIOBE pour la première fois de son histoire.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE</div>
+<div class="ls-content">
+<p>Ouvre Python et tape <code>import this</code>. Lis les 20 principes du Zen de Python et note les <strong>3 principes qui te semblent les plus importants</strong> pour un débutant. Explique en une phrase pourquoi chacun est utile.</p>
+</div>
+</div>
+
+`,
 
 'N0M1L3': `
-<div class="ls ls-why"><div class="ls-title">💡 POURQUOI COMPARER LES LANGAGES ?</div><div class="ls-content"><p>Il existe des centaines de langages. Comprendre <strong>pourquoi Python domine</strong> te donne confiance dans ton choix.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 LE COMPARATIF</div><div class="ls-content"><p>Pour afficher "Bonjour" :</p><pre># Python — 1 ligne :
-print("Bonjour")
 
-# Java — 5 lignes minimum !
-# public class Main {
-#   public static void main(String[] args) {
-#     System.out.println("Bonjour");
-#   }
-# }</pre><p>Python est conçu pour ressembler à du <strong>langage naturel</strong>. C'est son avantage majeur.</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 QUAND UTILISER QUOI</div><div class="ls-content"><ul><li><strong>Python</strong> → IA, data science, automatisation ✅ (ton choix)</li><li><strong>JavaScript</strong> → sites web et navigateur</li><li><strong>C++</strong> → jeux vidéo, systèmes ultra-rapides</li><li><strong>Java</strong> → grandes applis d'entreprise</li></ul></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Quel est l'avantage principal de Python sur Java ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Il est plus rapide</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Il est beaucoup plus simple à lire et écrire</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Il est gratuit</div></div><div class="quiz-explanation">✅ La lisibilité et la simplicité sont les forces majeures de Python.</div></div></div>`,
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+20 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 POURQUOI CETTE COMPARAISON EST UTILE ?</div>
+<div class="ls-content">
+<p>Il existe plus de 700 langages de programmation. Comprendre <strong>pourquoi Python gagne</strong> face aux autres te permettra de savoir quand l'utiliser, et quand choisir autre chose. Un bon développeur choisit le bon outil pour le bon problème.</p>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📊 TABLEAU COMPARATIF DES LANGAGES MAJEURS</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Langage</th><th>Forces</th><th>Faiblesses</th><th>Utilisé pour</th></tr>
+<tr><td><strong>Python 🐍</strong></td><td>Simple, IA/ML, données, rapidité de dev</td><td>Plus lent à l'exécution, pas pour mobile</td><td>IA, data, automatisation, backend</td></tr>
+<tr><td><strong>JavaScript</strong></td><td>Web front-end natif, partout dans le browser</td><td>Incohérences historiques, moins lisible</td><td>Sites web interactifs, applications web</td></tr>
+<tr><td><strong>Java</strong></td><td>Robuste, Android, grande entreprise</td><td>Verbeux, long à écrire</td><td>Applications Android, systèmes bancaires</td></tr>
+<tr><td><strong>C++</strong></td><td>Ultra-performant, contrôle total</td><td>Très complexe, long à apprendre</td><td>Jeux vidéo, systèmes embarqués, OS</td></tr>
+<tr><td><strong>SQL</strong></td><td>Requêtes base de données, universel</td><td>Limité aux bases de données</td><td>Interroger et gérer des bases de données</td></tr>
+<tr><td><strong>R</strong></td><td>Statistiques avancées, visualisation</td><td>Courbe d'apprentissage, moins général</td><td>Recherche statistique, biostatistiques</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 MÊME PROGRAMME EN 3 LANGAGES</div>
+<div class="ls-content">
+<p>Calculer la moyenne de 3 notes et afficher si c'est réussi (>= 10) :</p>
+<div class="code-label">Python — 5 lignes</div>
+<pre>notes = [12, 15, 8]
+moyenne = sum(notes) / len(notes)
+if moyenne >= 10:
+    print(f"Reussi ! Moyenne : {moyenne:.1f}")
+else:
+    print(f"Echec. Moyenne : {moyenne:.1f}")</pre>
+<div class="code-label">Java — 15 lignes</div>
+<pre>import java.util.Arrays;
+public class Main {
+    public static void main(String[] args) {
+        int[] notes = {12, 15, 8};
+        double moyenne = Arrays.stream(notes).average().orElse(0);
+        if (moyenne >= 10) {
+            System.out.printf("Reussi ! Moyenne : %.1f%n", moyenne);
+        } else {
+            System.out.printf("Echec. Moyenne : %.1f%n", moyenne);
+        }
+    }
+}</pre>
+<p style="margin-top:12px">Même résultat, mais Python est 3x plus court et 5x plus lisible.</p>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏢 QUAND CHOISIR PYTHON VS UN AUTRE LANGAGE ?</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Ton objectif</th><th>Langage recommandé</th><th>Pourquoi</th></tr>
+<tr><td>Apprendre à programmer</td><td>✅ Python</td><td>Plus simple, plus lisible, plus polyvalent</td></tr>
+<tr><td>Intelligence Artificielle</td><td>✅ Python</td><td>Standard de l'industrie, TensorFlow/PyTorch</td></tr>
+<tr><td>Analyser des données</td><td>✅ Python</td><td>pandas, NumPy, matplotlib — imbattable</td></tr>
+<tr><td>Automatiser des tâches</td><td>✅ Python</td><td>Scripts, web scraping, fichiers</td></tr>
+<tr><td>Site web frontend</td><td>JavaScript</td><td>C'est le seul langage du navigateur</td></tr>
+<tr><td>App mobile iOS/Android</td><td>Swift / Kotlin</td><td>Python n'est pas adapté au mobile natif</td></tr>
+<tr><td>Jeu vidéo haute performance</td><td>C++ / C#</td><td>Python trop lent pour le temps réel</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Python excelle en IA, data science, automatisation et backend web</li>
+<li>Python perd face à JavaScript pour le front-end web (navigateur)</li>
+<li>Python perd face à C++ pour les applications nécessitant ultra-performance</li>
+<li>Python perd face à Swift/Kotlin pour les apps mobiles natives</li>
+<li>Pour 80% des cas d'usage en entreprise, Python est le meilleur choix</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Pour développer une app iPhone, quel langage utilise-t-on ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Python</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Swift</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Java</div>
+</div>
+<div class="quiz-explanation">✅ Swift est le langage d'Apple pour iOS. Python n'est pas adapté au développement d'applications mobiles natives.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Pour un projet d'intelligence artificielle, quel est le premier choix ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">A</div>Python</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>C++</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>PHP</div>
+</div>
+<div class="quiz-explanation">✅ Python est le standard de l'IA. TensorFlow, PyTorch, scikit-learn, Keras — toutes les grandes librairies IA sont écrites pour Python.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quel langage est obligatoire pour rendre un site web interactif dans le navigateur ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Python</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>JavaScript</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Java</div>
+</div>
+<div class="quiz-explanation">✅ JavaScript est le seul langage nativement compris par les navigateurs web. Pour le front-end (ce que l'utilisateur voit), JavaScript est incontournable.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE DE RÉFLEXION</div>
+<div class="ls-content">
+<p>Pour chacun des projets suivants, identifie le langage le plus adapté et justifie en une phrase :</p>
+<ol>
+<li>Un chatbot intelligent qui répond à des questions médicales</li>
+<li>Une application de rendez-vous pour cabinet dentaire (iPhone)</li>
+<li>Un tableau de bord pour analyser les résultats de traitement de 500 patients</li>
+<li>Un jeu vidéo en 3D temps réel</li>
+<li>Un formulaire de contact sur un site web</li>
+</ol>
+<div class="ls-note">Pas de code requis — cet exercice développe ton jugement de développeur. La capacité à choisir le bon outil est une compétence clé.</div>
+</div>
+</div>
+
+`,
 
 'N0M1L4': `
-<div class="ls ls-why"><div class="ls-title">💡 CONNAÎTRE SES LIMITES</div><div class="ls-content"><p>Savoir ce que Python peut et ne peut pas faire te donne des attentes réalistes.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 CE QUE PYTHON PEUT FAIRE</div><div class="ls-content"><ul><li>✅ Automatiser des tâches répétitives</li><li>✅ Analyser des données et créer des graphiques</li><li>✅ Construire des IA et des chatbots</li><li>✅ Créer des sites web et des APIs</li><li>✅ Traiter des fichiers CSV, Excel, PDF</li><li>✅ Envoyer des emails automatiquement</li></ul></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 CE QUE PYTHON NE FAIT PAS BIEN</div><div class="ls-content"><ul><li>❌ <strong>Apps iPhone/Android</strong> → Swift ou Kotlin</li><li>❌ <strong>Jeux vidéo temps réel</strong> → C++ ou Unity</li><li>❌ <strong>Sites web complexes côté navigateur</strong> → JavaScript</li></ul><p>Pour ton objectif — <strong>comprendre l'IA et automatiser</strong> — Python est parfait.</p></div></div>
-<div class="ls ls-example"><div class="ls-title">🏥 EN ORTHODONTIE</div><div class="ls-content"><ul><li>Analyser des données patients (âge, traitement, durée)</li><li>Créer des graphiques de suivi de traitement</li><li>Automatiser des rappels de rendez-vous par email</li><li>Traiter des fichiers Excel de cabinet</li></ul></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Pour quoi Python est-il le MOINS adapté ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Analyser des données médicales</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Créer une app iPhone native</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Automatiser des emails</div></div><div class="quiz-explanation">✅ Pour les apps iPhone, on utilise Swift. Python n'est pas le bon outil pour ça.</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+20 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 LA CARTE DES POSSIBILITÉS PYTHON</div>
+<div class="ls-content">
+<p>Python est un couteau suisse numérique. Avant de commencer à coder, comprendre son écosystème te permet de voir <strong>exactement ce que tu vas pouvoir faire</strong> à la fin de cette formation. C'est motivant et ça donne une direction claire.</p>
+</div>
+</div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 VISUALISE LE TERRAIN</div>
+<div class="ls-content">
+<p>Python peut être comparé à un <strong>couteau suisse</strong> : il fait presque tout, même si pour certaines tâches très spécifiques (couper du bois), tu préfères une scie. Voici les 8 grands domaines où Python excelle.</p>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LES 8 DOMAINES D'EXCELLENCE DE PYTHON</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Domaine</th><th>Ce que Python fait</th><th>Outils clés</th><th>Exemple concret</th></tr>
+<tr><td>🤖 IA & Machine Learning</td><td>Créer et entraîner des modèles d'IA</td><td>TensorFlow, PyTorch, scikit-learn</td><td>Classifier des radios dentaires automatiquement</td></tr>
+<tr><td>📊 Data Science</td><td>Analyser et visualiser des données</td><td>pandas, NumPy, matplotlib</td><td>Analyser les résultats de 1000 patients en 5 minutes</td></tr>
+<tr><td>🌐 Web Backend</td><td>Créer des serveurs et APIs</td><td>Django, FastAPI, Flask</td><td>Instagram (1 milliard d'users) tourne sur Django</td></tr>
+<tr><td>🤖 Automatisation</td><td>Automatiser des tâches répétitives</td><td>selenium, pyautogui, schedule</td><td>Envoyer 200 emails de rappel de RDV automatiquement</td></tr>
+<tr><td>🔍 Web Scraping</td><td>Extraire des données de sites web</td><td>BeautifulSoup, Scrapy, requests</td><td>Récupérer les tarifs de concurrents automatiquement</td></tr>
+<tr><td>🔒 Cybersécurité</td><td>Tester la sécurité de systèmes</td><td>Scapy, Nmap, Metasploit</td><td>Auditer la sécurité d'un réseau hospitalier</td></tr>
+<tr><td>🎮 Développement de jeux</td><td>Créer des jeux 2D simples</td><td>Pygame, Arcade</td><td>Jeux éducatifs pour patients</td></tr>
+<tr><td>⚗️ Sciences & Recherche</td><td>Calculs scientifiques complexes</td><td>SciPy, SymPy, BioPython</td><td>Modéliser la progression d'un traitement orthodontique</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-case-study">
+<div class="ls-title">📁 CAS RÉEL — PYTHON EN ORTHODONTIE</div>
+<div class="ls-content">
+<p>Voici des cas d'usage concrets de Python dans un cabinet d'orthodontie :</p>
+<ul>
+<li><strong>Analyse d'images céphalométriques</strong> — Python + IA pour identifier automatiquement les points céphalométriques sur des radios</li>
+<li><strong>Prédiction de durée de traitement</strong> — modèle ML entraîné sur les dossiers historiques pour estimer la durée d'un traitement</li>
+<li><strong>Rappels automatiques de RDV</strong> — script Python qui envoie des SMS/emails à 8h le matin pour les RDV du lendemain</li>
+<li><strong>Dashboard de suivi</strong> — tableau de bord qui visualise la progression de chaque patient mois par mois</li>
+<li><strong>Facturation automatisée</strong> — génération de PDF de facturation à partir d'une base de données patients</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-errors">
+<div class="ls-title">❌ CE QUE PYTHON NE FAIT PAS BIEN</div>
+<div class="ls-content">
+<ul class="errors-list">
+<li><strong>Applications mobile natives (iOS/Android)</strong> — utilise Swift ou Kotlin à la place</li>
+<li><strong>Frontend web (boutons, animations)</strong> — c'est le domaine de JavaScript</li>
+<li><strong>Jeux vidéo haute performance en 3D</strong> — C++ ou C# (Unity) sont bien plus rapides</li>
+<li><strong>Systèmes d'exploitation ou drivers</strong> — C/C++ pour le bas niveau</li>
+<li><strong>Calculs temps réel ultra-critiques</strong> — Python est interprété, donc plus lent que C</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Python excelle dans 8 domaines majeurs : IA, data, web, automatisation, scraping, sécurité, jeux, sciences</li>
+<li>À la fin de cette formation, tu sauras utiliser Python pour automatiser et analyser</li>
+<li>Python ne remplace pas JavaScript pour le web front-end ni Swift pour les apps mobiles</li>
+<li>Le bon développeur connaît les forces et limites de son outil</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Tu veux analyser 1000 dossiers patients et générer des graphiques. Quel outil Python utilises-tu ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Django (framework web)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>pandas + matplotlib (data science)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Pygame (jeux)</div>
+</div>
+<div class="quiz-explanation">✅ pandas pour manipuler les données et matplotlib pour les visualiser — c'est la combinaison standard pour l'analyse de données médicales.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Instagram utilise Python pour son backend. Combien d'utilisateurs cela représente ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>10 millions</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>100 millions</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">C</div>1 milliard+</div>
+</div>
+<div class="quiz-explanation">✅ Instagram a plus d'un milliard d'utilisateurs actifs, et son backend tourne sur Django (framework Python). La preuve que Python passe à l'échelle.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — MAP TES BESOINS</div>
+<div class="ls-content">
+<p>Fais l'inventaire de tes 5 tâches professionnelles ou personnelles les plus répétitives. Pour chacune, identifie si Python pourrait l'automatiser et comment.</p>
+<div class="ls-note">Exemple : "Je recopie manuellement les infos patients depuis les emails dans mon logiciel" → Python peut lire les emails, extraire les infos et les insérer automatiquement.</div>
+</div>
+</div>
+
+`,
 
 'N0M2L1': `
-<div class="ls ls-why"><div class="ls-title">💡 COMPRENDRE CE QUI SE PASSE RÉELLEMENT</div><div class="ls-content"><p>Comprendre comment Python traduit tes instructions t'aide à mieux déboguer et comprendre les messages d'erreur.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 L'ANALOGIE DU TRADUCTEUR</div><div class="ls-content"><p>Imagine que tu veux parler à quelqu'un qui ne comprend que le japonais. Tu parles français. Il te faut un <strong>interprète</strong>.</p><blockquote>Toi (code Python) → Interprète Python → Ordinateur (0 et 1)</blockquote><p>Python lit ton code ligne par ligne, traduit en instructions machine, l'ordinateur exécute.</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LE PROCESSUS</div><div class="ls-content"><ol><li>Tu écris ton code Python (fichier .py)</li><li>Tu lances Python — il lit le fichier</li><li>Python traduit chaque ligne en instructions processeur</li><li>Le processeur exécute ultra-rapidement</li><li>Le résultat apparaît à l'écran</li></ol><p>Si une ligne contient une erreur → Python s'arrête et affiche un message d'erreur précis.</p></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Que comprend réellement un ordinateur ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Le code Python directement</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Uniquement des 0 et des 1</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Le français et l'anglais</div></div><div class="quiz-explanation">✅ Un processeur ne comprend que des 0 et 1. Python est le traducteur.</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 12 min</span><span class="ls-meta-diff">🟡 Débutant+</span><span class="ls-meta-xp">+25 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 POURQUOI COMPRENDRE L'EXÉCUTION ?</div>
+<div class="ls-content">
+<p>Comprendre comment Python exécute ton code te permet de <strong>mieux déboguer</strong> tes erreurs et de comprendre les messages d'erreur — qui seront tes meilleurs alliés en tant que développeur.</p>
+</div>
+</div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 L'ANALOGIE DE LA RECETTE</div>
+<div class="ls-content">
+<p>Imagine un chef cuisinier qui reçoit une recette écrite en français. Il lit chaque étape <strong>une par une</strong>, dans l'ordre, et exécute chaque instruction immédiatement. S'il rencontre une instruction qu'il ne comprend pas, il s'arrête et te dit exactement où est le problème.</p>
+<p>Python fonctionne exactement comme ça : il lit ton code ligne par ligne, de haut en bas, et exécute chaque instruction au fur et à mesure.</p>
+<div class="ls-note"><strong>Terme clé :</strong> Python est un langage <em>interprété</em> — il exécute le code directement sans le compiler d'abord. C'est pour ça qu'on obtient les résultats immédiatement.</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LE CHEMIN D'UN CODE PYTHON</div>
+<div class="ls-content">
+<p>Voici ce qui se passe exactement quand tu écris <code>print("Bonjour")</code> :</p>
+<table class="concept-table">
+<tr><th>Étape</th><th>Ce qui se passe</th><th>Analogue humain</th></tr>
+<tr><td>1. Tu écris le code</td><td>Fichier .py créé sur ton disque</td><td>Tu écris la recette sur papier</td></tr>
+<tr><td>2. Interpréteur Python</td><td>Python lit ton fichier ligne par ligne</td><td>Le chef lit la recette</td></tr>
+<tr><td>3. Analyse syntaxique</td><td>Vérifie que le code est correct</td><td>Le chef vérifie que la recette a du sens</td></tr>
+<tr><td>4. Bytecode</td><td>Convertit en instructions intermédiaires</td><td>Le chef traduit mentalement en gestes</td></tr>
+<tr><td>5. Machine virtuelle Python</td><td>Exécute les instructions sur le CPU</td><td>Le chef cuisine</td></tr>
+<tr><td>6. Résultat</td><td>Affichage dans le terminal</td><td>Le plat est servi</td></tr>
+</table>
+<p><strong>Compilé vs Interprété :</strong></p>
+<ul>
+<li><strong>Compilé (C, C++, Java)</strong> — on traduit TOUT le code en une fois avant de l'exécuter. Comme traduire tout un livre avant de le lire. Plus rapide à l'exécution, mais plus lent à développer.</li>
+<li><strong>Interprété (Python, JavaScript)</strong> — on traduit et exécute ligne par ligne en temps réel. Plus lent, mais développement beaucoup plus rapide et flexible.</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 OBSERVER L'EXÉCUTION LIGNE PAR LIGNE</div>
+<div class="ls-content">
+<p>Ce code s'exécute dans l'ordre exact de lecture (haut vers bas) :</p>
+<pre>print("Etape 1 : debut du programme")
+nom = "Bryan"                          # ligne 2 : stocke "Bryan" dans nom
+print("Etape 2 : variable creee")
+age = 27                               # ligne 4 : stocke 27 dans age
+print(f"Etape 3 : {nom} a {age} ans") # ligne 5 : affiche
+print("Etape 4 : programme termine")</pre>
+<div class="out-label">Résultat — dans cet ordre exact</div>
+<div class="out-block">Etape 1 : debut du programme
+Etape 2 : variable creee
+Etape 3 : Bryan a 27 ans
+Etape 4 : programme termine</div>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ LES ERREURS — TES MEILLEURES AMIES</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><strong>SyntaxError</strong> — Python ne comprend pas ta syntaxe. Vérifie les parenthèses, guillemets, deux-points.</li>
+<li><strong>NameError</strong> — tu utilises une variable qui n'existe pas encore. Vérifie l'ordre de ton code.</li>
+<li><strong>TypeError</strong> — tu mélanges des types incompatibles (ex: additionner un chiffre et du texte).</li>
+<li><strong>IndentationError</strong> — problème d'espaces. Python est strict sur l'indentation.</li>
+</ul>
+<div class="ls-note">Les messages d'erreur Python sont parmi les plus clairs de tous les langages. Lis-les attentivement — ils te disent exactement ce qui ne va pas et à quelle ligne.</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Python est interprété — il exécute le code ligne par ligne, de haut en bas</li>
+<li>Ton code passe par 6 étapes : écriture → analyse → bytecode → exécution → résultat</li>
+<li>Interprété = développement rapide, exécution légèrement plus lente que compilé</li>
+<li>Les erreurs Python sont précises : elles te donnent la ligne et la nature du problème</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Python exécute le code dans quel ordre ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>De bas en haut</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>De haut en bas, ligne par ligne</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Dans un ordre aléatoire</div>
+</div>
+<div class="quiz-explanation">✅ Python lit et exécute le code de haut en bas, ligne par ligne. C'est pour ça qu'une variable doit être créée AVANT d'être utilisée.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Qu'est-ce qu'un langage "interprété" ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Un langage traduit entièrement avant l'exécution</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Un langage traduit et exécuté ligne par ligne en temps réel</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Un langage qui nécessite une compilation manuelle</div>
+</div>
+<div class="quiz-explanation">✅ Un langage interprété exécute le code directement, instruction par instruction, sans étape de compilation préalable. Python est interprété.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — PRÉVOIR LE RÉSULTAT</div>
+<div class="ls-content">
+<p>Sans exécuter ce code, prédit l'ordre exact d'affichage :</p>
+<pre>print("A")
+x = 10
+print("B")
+y = x + 5
+print("C")
+print(y)
+print("D")</pre>
+<p>Écris ta réponse, puis vérifie en exécutant le code. Comprendre l'ordre d'exécution est fondamental.</p>
+</div>
+</div>
+
+`,
 
 'N0M2L2': `
-<div class="ls ls-why"><div class="ls-title">💡 TON PREMIER ENVIRONNEMENT</div><div class="ls-content"><p>Pour faire tourner du code Python, tu as besoin d'un environnement. Il en existe qui ne nécessitent rien à installer.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 3 OPTIONS</div><div class="ls-content"><p><strong>Option 1 — Google Colab ⭐ (recommandé)</strong><br>colab.research.google.com → Gratuit, rien à installer, fonctionne dans Chrome.</p><p><strong>Option 2 — Replit</strong><br>replit.com → En ligne, idéal pour partager du code.</p><p><strong>Option 3 — VS Code + Python installé</strong><br>Pour aller plus loin. Python sur python.org.</p></div></div>
-<div class="ls ls-example"><div class="ls-title">💡 POUR TOI, BRYAN</div><div class="ls-content"><p>Va sur <strong>colab.research.google.com</strong>, connecte-toi avec ton Gmail, crée un nouveau notebook et tape :</p><pre>print("Ca marche !")</pre><p>Appuie sur ▶ — tu viens de lancer ton premier code Python !</p></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Option la plus simple pour débuter ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Installer Python + VS Code</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Google Colab dans le navigateur</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Acheter un logiciel spécial</div></div><div class="quiz-explanation">✅ Google Colab = coder Python dans Chrome sans rien installer.</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 15 min</span><span class="ls-meta-diff">🟢 Pratique</span><span class="ls-meta-xp">+30 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 TES OPTIONS D'ENVIRONNEMENT</div>
+<div class="ls-content">
+<p>Il existe plusieurs façons de coder en Python. Certaines ne nécessitent aucune installation. Choisir le bon environnement dès le début te fera gagner beaucoup de temps.</p>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📊 COMPARAISON DES ENVIRONNEMENTS</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Environnement</th><th>Installation</th><th>Idéal pour</th><th>Lien</th></tr>
+<tr><td><strong>Replit</strong></td><td>Aucune — en ligne</td><td>Débuter, tester rapidement</td><td>replit.com</td></tr>
+<tr><td><strong>Google Colab</strong></td><td>Aucune — Google Drive</td><td>Data science, notebooks</td><td>colab.google.com</td></tr>
+<tr><td><strong>IDLE</strong></td><td>Inclus avec Python</td><td>Débutants, exercices simples</td><td>Installé automatiquement</td></tr>
+<tr><td><strong>VS Code + Python</strong></td><td>10 min d'installation</td><td>Projets sérieux, professionnel</td><td>code.visualstudio.com</td></tr>
+<tr><td><strong>PyCharm</strong></td><td>15 min d'installation</td><td>Développement Python avancé</td><td>jetbrains.com/pycharm</td></tr>
+</table>
+<div class="ls-note"><strong>Recommandation pour ce cours :</strong> commence avec <strong>Replit</strong> (aucune installation, code immédiatement). Quand tu seras à l'aise, installe <strong>VS Code</strong> pour les projets sérieux.</div>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 INSTALLATION PYTHON — GUIDE PAS À PAS</div>
+<div class="ls-content">
+<p><strong>Sur Windows :</strong></p>
+<ol>
+<li>Va sur <strong>python.org/downloads</strong></li>
+<li>Clique sur "Download Python 3.x.x" (la dernière version)</li>
+<li>Lance l'installateur</li>
+<li>⚠️ IMPORTANT : coche "Add Python to PATH" avant d'installer</li>
+<li>Clique "Install Now"</li>
+</ol>
+<p><strong>Vérifier l'installation :</strong></p>
+<pre># Dans le Terminal (Windows: cmd ou PowerShell)
+python --version
+# Doit afficher : Python 3.x.x</pre>
+<p><strong>Sur Mac :</strong></p>
+<ol>
+<li>Python est souvent déjà installé. Vérifie avec <code>python3 --version</code></li>
+<li>Sinon, va sur python.org/downloads ou utilise Homebrew : <code>brew install python3</code></li>
+</ol>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏢 VS CODE — L'ENVIRONNEMENT PROFESSIONNEL</div>
+<div class="ls-content">
+<p>VS Code est l'éditeur utilisé par 75% des développeurs professionnels (sondage Stack Overflow 2023). Voici pourquoi et comment le configurer :</p>
+<ol>
+<li>Télécharge VS Code sur <strong>code.visualstudio.com</strong> (gratuit)</li>
+<li>Lance VS Code, clique sur "Extensions" (icône puzzle à gauche)</li>
+<li>Recherche "Python" et installe l'extension officielle Microsoft</li>
+<li>Crée un fichier <code>mon_programme.py</code></li>
+<li>Appuie sur F5 pour exécuter</li>
+</ol>
+<p><strong>Raccourcis VS Code essentiels :</strong></p>
+<table class="concept-table">
+<tr><th>Raccourci</th><th>Action</th></tr>
+<tr><td>F5</td><td>Exécuter le programme</td></tr>
+<tr><td>Ctrl+S / Cmd+S</td><td>Sauvegarder</td></tr>
+<tr><td>Ctrl+/ / Cmd+/</td><td>Commenter/décommenter une ligne</td></tr>
+<tr><td>Ctrl+Z / Cmd+Z</td><td>Annuler</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Pour débuter sans installation : utilise Replit (replit.com) ou Google Colab</li>
+<li>Pour un usage professionnel : installe Python 3 + VS Code</li>
+<li>Toujours vérifier que Python est correctement installé avec <code>python --version</code></li>
+<li>Sur Windows : cocher "Add to PATH" lors de l'installation est crucial</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quel est l'environnement recommandé pour débuter sans aucune installation ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>PyCharm</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Replit</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>VS Code</div>
+</div>
+<div class="quiz-explanation">✅ Replit est un environnement en ligne qui ne nécessite aucune installation. Parfait pour commencer à coder immédiatement.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Sur Windows, qu'est-il crucial de cocher lors de l'installation de Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>"Install for all users"</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>"Add Python to PATH"</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>"Create shortcuts"</div>
+</div>
+<div class="quiz-explanation">✅ "Add Python to PATH" permet d'utiliser Python depuis n'importe quel dossier dans le terminal. Sans ça, Python ne sera pas accessible en ligne de commande.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 MISSION PRATIQUE</div>
+<div class="ls-content">
+<p><strong>Cette semaine, configure ton environnement :</strong></p>
+<ol>
+<li>Va sur <strong>replit.com</strong> et crée un compte gratuit</li>
+<li>Crée un nouveau Repl en Python</li>
+<li>Tape <code>print("Mon environnement Python est prêt !")</code></li>
+<li>Appuie sur Run et vérifie que ça fonctionne</li>
+<li>Si tu veux aller plus loin : installe Python + VS Code sur ta machine</li>
+</ol>
+</div>
+</div>
+
+`,
 
 'N0M2L3': `
-<div class="ls ls-why"><div class="ls-title">💡 TON PREMIER PROGRAMME</div><div class="ls-content"><p>Écrire ton premier programme est un moment fondateur. Tu passes de la théorie à la pratique. Et c'est plus simple que tu ne le crois.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 HELLO WORLD</div><div class="ls-content"><p>Par tradition, le premier programme affiche un message. En Python, c'est <strong>1 seule ligne</strong> :</p><pre>print("Bonjour le monde !")</pre></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 COMPRENDRE CETTE LIGNE</div><div class="ls-content"><ul><li><code>print</code> = une commande que Python connaît</li><li><code>()</code> = obligatoires pour appeler la commande</li><li><code>""</code> = indiquent que c'est du texte</li></ul><pre>print("Bonjour, je m'appelle Bryan !")
-print("Je suis etudiant en orthodontie")
-print("J'apprends Python !")
-# Chaque print() affiche une nouvelle ligne</pre></div></div>
-<div class="ls ls-exercise"><div class="ls-title">🎯 EXERCICE</div><div class="ls-content"><p>Écris 3 lignes qui te présentent :</p><pre>print("Je m'appelle Bryan")
-print("J'ai 27 ans")
-print("Je vis a Nice")</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Laquelle est correcte ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Print("Bonjour")</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>print("Bonjour")</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>print(Bonjour)</div></div><div class="quiz-explanation">✅ Python est sensible à la casse. Print avec P majuscule = erreur. Le texte doit être entre guillemets.</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟢 Pratique</span><span class="ls-meta-xp">+30 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 LA TRADITION DU HELLO WORLD</div>
+<div class="ls-content">
+<p>Dans le monde de la programmation, chaque développeur commence par écrire "Hello, World!" dans son premier programme. C'est une tradition mondiale qui remonte aux années 70. Aujourd'hui, c'est ton tour.</p>
+</div>
+</div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 TA PREMIÈRE INSTRUCTION</div>
+<div class="ls-content">
+<p>La fonction la plus fondamentale de Python : <code>print()</code>. Elle affiche ce que tu mets entre les parenthèses. C'est ton haut-parleur — tu lui donnes quelque chose et il l'affiche à l'écran.</p>
+<pre>print("Bonjour le monde !")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Bonjour le monde !</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 DÉCORTIQUONS print()</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Partie</th><th>Rôle</th><th>Exemple</th></tr>
+<tr><td><code>print</code></td><td>Nom de la fonction — dit à Python quoi faire</td><td>comme dire "affiche" à Python</td></tr>
+<tr><td><code>()</code></td><td>Parenthèses — contiennent ce qu'on veut afficher</td><td>obligatoires, toujours présentes</td></tr>
+<tr><td><code>"..."</code></td><td>Guillemets — indiquent que c'est du texte</td><td>simples ou doubles, les deux marchent</td></tr>
+</table>
+<p><strong>print() peut faire beaucoup de choses :</strong></p>
+<pre># Afficher du texte
+print("Bonjour !")
+
+# Afficher un nombre
+print(42)
+print(3.14)
+
+# Afficher plusieurs choses sur la même ligne
+print("Mon âge :", 27)
+
+# Afficher le résultat d'un calcul
+print(10 + 5)
+print(100 * 1.2)
+
+# Afficher une ligne vide
+print()</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Bonjour !
+42
+3.14
+Mon âge : 27
+15
+120.0
+</div>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 LES COMMENTAIRES — DOCUMENTER SON CODE</div>
+<div class="ls-content">
+<p>Un commentaire est une note que tu laisses dans ton code pour l'expliquer. Python ignore totalement les commentaires — ils sont uniquement pour toi (et tes collègues).</p>
+<pre># Ceci est un commentaire — Python l'ignore
+print("Hello")  # commentaire en fin de ligne aussi
+
+# Dans un projet professionnel, les commentaires sont essentiels
+# Ils expliquent POURQUOI tu fais quelque chose, pas QUOI tu fais
+nom_patient = "Martin"  # prénom uniquement, sans nom de famille
+age = 14                # en années, pas en mois</pre>
+<div class="ls-note"><strong>Bonne pratique :</strong> commente le POURQUOI, pas le QUOI. <code># additionne age et 10</code> est inutile. <code># calcule l'âge en fin de traitement</code> est utile.</div>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 TON PREMIER VRAI PROGRAMME PROFESSIONNEL</div>
+<div class="ls-content">
+<p>Voici un premier programme complet qui simule un accueil de cabinet médical :</p>
+<pre># Programme d'accueil — Cabinet Orthodontique
+# Auteur : Bryan Faruch
+# Version : 1.0
+
+# Informations du cabinet
+NOM_CABINET = "Cabinet Orthodontique Dr. Faruch"
+VILLE = "Nice"
+TELEPHONE = "04 93 XX XX XX"
+
+# Accueil du patient
+print("=" * 50)
+print(f"  Bienvenue au {NOM_CABINET}")
+print(f"  Situe a {VILLE}")
+print("=" * 50)
+print()
+print("Nos services :")
+print("  - Consultations orthodontiques")
+print("  - Appareils fixes et aligneurs")
+print("  - Contention")
+print()
+print(f"Contact : {TELEPHONE}")
+print("Bonne journee !")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">==================================================
+  Bienvenue au Cabinet Orthodontique Dr. Faruch
+  Situe a Nice
+==================================================
+
+Nos services :
+  - Consultations orthodontiques
+  - Appareils fixes et aligneurs
+  - Contention
+
+Contact : 04 93 XX XX XX
+Bonne journee !</div>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ ASTUCES print() À CONNAÎTRE</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><code>print("=" * 30)</code> — affiche 30 fois le caractère = (utile pour des séparateurs visuels)</li>
+<li><code>print()</code> sans argument — affiche une ligne vide</li>
+<li><code>print("a", "b", "c")</code> — affiche plusieurs éléments séparés par un espace</li>
+<li><code>print("a", end="")</code> — pas de saut de ligne à la fin (utile pour afficher sur la même ligne)</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li><code>print()</code> est ta fonction de base pour afficher des informations</li>
+<li>Les guillemets (simples ou doubles) encadrent le texte</li>
+<li>Les commentaires commencent par # et sont ignorés par Python</li>
+<li>Un bon programme est bien commenté et lisible par un humain</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que fait print() ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Imprime un document sur l'imprimante</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Affiche du texte ou des valeurs dans le terminal</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Sauvegarde une variable en mémoire</div>
+</div>
+<div class="quiz-explanation">✅ print() affiche ce que tu lui donnes dans la console (terminal). C'est ton principal outil pour voir ce que fait ton programme.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que fait Python avec un commentaire (#) ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Il l'affiche dans le terminal en italique</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>Il génère une erreur</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">C</div>Il l'ignore complètement</div>
+</div>
+<div class="quiz-explanation">✅ Python ignore totalement les commentaires. Ils servent uniquement à documenter le code pour les humains.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que produit print("=" * 5) ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>= * 5</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>=====</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Une erreur</div>
+</div>
+<div class="quiz-explanation">✅ En Python, multiplier un string par un nombre répète ce string. "=" * 5 donne "=====" — très utile pour créer des séparateurs visuels.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — TON PROGRAMME DE PRÉSENTATION</div>
+<div class="ls-content">
+<p>Crée un programme qui affiche une carte de visite professionnelle formatée :</p>
+<pre># Ma carte de visite Python
+# TODO : remplace les informations par les tiennes
+
+prenom = "Bryan"
+nom = "Faruch"
+metier = "Etudiant en orthodontie"
+ville = "Nice"
+email = "bryan@exemple.com"
+
+# Affiche la carte de visite
+print("+" + "=" * 40 + "+")
+print(f"|  {prenom} {nom:<30}|")
+print(f"|  {metier:<38}|")
+print(f"|  {ville:<38}|")
+print(f"|  {email:<38}|")
+print("+" + "=" * 40 + "+")</pre>
+<p>Personnalise avec tes vraies informations et améliore la mise en page.</p>
+</div>
+</div>
+
+<div class="ls ls-project">
+<div class="ls-title">🚀 MINI-PROJET — MENU DE CABINET</div>
+<div class="ls-content">
+<p><strong>Objectif :</strong> Créer un programme d'accueil complet pour un cabinet professionnel.</p>
+<p>Ton programme doit afficher :</p>
+<ul>
+<li>Le nom du cabinet et la ville</li>
+<li>Une liste de services proposés</li>
+<li>Les horaires d'ouverture</li>
+<li>Les coordonnées (téléphone, email, adresse)</li>
+<li>Un message de bienvenue personnalisé</li>
+</ul>
+<p>Contraintes : utiliser <strong>au moins 10 instructions print()</strong>, des <strong>commentaires</strong> pour chaque section, et des <strong>séparateurs visuels</strong> (= ou -).</p>
+<div class="ls-note">Ce mini-projet te donnera un vrai sentiment d'accomplissement. C'est ton premier programme professionnel complet.</div>
+</div>
+</div>
+
+`,
 
 'N0M3L1': `
 <div class="ls ls-why"><div class="ls-title">💡 LE LIEN PYTHON ↔ IA</div><div class="ls-content"><p>Comprendre pourquoi toutes les IA utilisent Python te donne les clés pour comprendre comment elles fonctionnent.</p></div></div>
@@ -1184,169 +2289,1348 @@ client = anthropic.Anthropic(api_key="ta-cle")
 <div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Après cette formation, tu seras capable de :</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Créer la prochaine version de ChatGPT</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Automatiser, analyser des données, utiliser des APIs IA</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Uniquement lire du code</div></div><div class="quiz-explanation">✅ Tu seras autonome avec Python : automatisation, data, et connexion aux IA.</div></div></div>`,
 
 'N1M1L2': `
-<div class="ls ls-why"><div class="ls-title">💡 PASSER À LA PRATIQUE</div><div class="ls-content"><p>Comprendre les variables en théorie c'est bien — les créer toi-même c'est mieux. Cette leçon, on code vraiment.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 LA SYNTAXE</div><div class="ls-content"><p>Créer une variable : <strong>nom = valeur</strong></p><pre>age = 27
-prenom = "Bryan"
-poids = 75.5
-est_etudiant = True</pre><p>Trois éléments : le <strong>nom</strong> à gauche, le <strong>=</strong> au milieu, la <strong>valeur</strong> à droite.</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LES TYPES</div><div class="ls-content"><pre>age = 27           # int — nombre entier
-poids = 75.5       # float — nombre décimal
-nom = "Bryan"      # str — texte entre guillemets
-majeur = True      # bool — Vrai ou Faux
 
-# Vérifier le type :
-print(type(27))       # &lt;class 'int'&gt;
-print(type("Bryan"))  # &lt;class 'str'&gt;</pre></div></div>
-<div class="ls ls-exercise"><div class="ls-title">🎯 EXERCICE</div><div class="ls-content"><pre>nom_patient = "Sophie Martin"
-age_patient = 15
-en_traitement = True
-duree_mois = 24
-print(nom_patient, "—", age_patient, "ans")
-print("Traitement actif :", en_traitement)</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Laquelle est incorrecte ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>age = 25</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>25 = age</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>nom = "Bryan"</div></div><div class="quiz-explanation">✅ Le nom doit être à GAUCHE du =. Jamais l'inverse.</div></div></div>`,
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+25 XP</span></div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 CRÉER UNE VARIABLE — LA SYNTAXE</div>
+<div class="ls-content">
+<p>Créer une variable en Python est l'opération la plus simple qui soit. Aucun mot-clé spécial requis (pas de <code>var</code>, <code>let</code>, <code>int</code>). Juste le nom, le signe égal, et la valeur.</p>
+<pre>nom = "Bryan"   # Python détecte automatiquement que c'est du texte
+age = 27        # Python détecte que c'est un entier
+taille = 1.78   # Python détecte que c'est un decimal</pre>
+<div class="ls-note"><strong>Typage dynamique :</strong> Python devine automatiquement le type de chaque variable. Pas besoin de dire "je crée un entier" comme en Java ou C++.</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 EXPLORER LES VARIABLES AVEC type() ET id()</div>
+<div class="ls-content">
+<p>Python te donne des outils pour inspecter tes variables :</p>
+<pre>nom = "Bryan"
+age = 27
+taille = 1.78
+actif = True
+
+# type() — affiche le type de la variable
+print(type(nom))     # class 'str'
+print(type(age))     # class 'int'
+print(type(taille))  # class 'float'
+print(type(actif))   # class 'bool'
+
+# id() — affiche l'adresse mémoire de la variable
+print(id(age))       # ex: 140234567 (un grand nombre)</pre>
+<p>Tu n'as pas besoin d'utiliser <code>id()</code> souvent, mais <code>type()</code> est très utile pour déboguer.</p>
+<p><strong>Assigner plusieurs variables en une ligne :</strong></p>
+<pre>x, y, z = 1, 2, 3       # x=1, y=2, z=3
+a = b = c = 0            # a, b et c valent tous 0
+nom, age = "Bryan", 27   # pratique pour des paires</pre>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 MODIFIER UNE VARIABLE</div>
+<div class="ls-content">
+<pre>score = 0
+print(f"Score initial : {score}")
+
+score = score + 10    # ajoute 10 au score actuel
+print(f"Apres bonus : {score}")
+
+score += 5            # raccourci pour score = score + 5
+print(f"Apres bonus 2 : {score}")
+
+score *= 2            # raccourci pour score = score * 2
+print(f"Score double : {score}")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Score initial : 0
+Apres bonus : 10
+Apres bonus 2 : 15
+Score double : 30</div>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏢 VARIABLES EN CONTEXTE MÉDICAL</div>
+<div class="ls-content">
+<pre># Gestion d'une séance orthodontique
+patients_vus = 0
+revenus_journee = 0.0
+duree_totale_min = 0
+
+# Simuler 3 consultations
+patients_vus += 1
+revenus_journee += 120.0
+duree_totale_min += 30
+
+patients_vus += 1
+revenus_journee += 80.0
+duree_totale_min += 20
+
+patients_vus += 1
+revenus_journee += 200.0
+duree_totale_min += 60
+
+# Bilan de journée
+duree_totale_h = duree_totale_min / 60
+revenu_moyen = revenus_journee / patients_vus
+
+print(f"Patients vus : {patients_vus}")
+print(f"Revenus : {revenus_journee:.2f} euros")
+print(f"Temps total : {duree_totale_h:.1f}h")
+print(f"Revenu moyen/patient : {revenu_moyen:.2f} euros")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Patients vus : 3
+Revenus : 400.00 euros
+Temps total : 1.8h
+Revenu moyen/patient : 133.33 euros</div>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ OPÉRATEURS D'AFFECTATION RACCOURCIS</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Raccourci</th><th>Équivalent long</th><th>Exemple</th></tr>
+<tr><td><code>x += 5</code></td><td><code>x = x + 5</code></td><td>Ajouter 5 à x</td></tr>
+<tr><td><code>x -= 3</code></td><td><code>x = x - 3</code></td><td>Soustraire 3 de x</td></tr>
+<tr><td><code>x *= 2</code></td><td><code>x = x * 2</code></td><td>Doubler x</td></tr>
+<tr><td><code>x /= 4</code></td><td><code>x = x / 4</code></td><td>Diviser x par 4</td></tr>
+<tr><td><code>x //= 2</code></td><td><code>x = x // 2</code></td><td>Division entière</td></tr>
+<tr><td><code>x **= 3</code></td><td><code>x = x ** 3</code></td><td>Mettre au cube</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Créer une variable : juste <code>nom = valeur</code>, sans mot-clé spécial</li>
+<li>Python détecte automatiquement le type (int, float, str, bool)</li>
+<li><code>type(variable)</code> pour voir le type d'une variable</li>
+<li>Assignations multiples : <code>x, y = 1, 2</code> ou <code>a = b = c = 0</code></li>
+<li>Opérateurs raccourcis : <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code></li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quelle instruction crée une variable x avec la valeur 42 ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>int x = 42</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>x = 42</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>var x = 42</div>
+</div>
+<div class="quiz-explanation">✅ En Python, pas besoin de mot-clé comme int, var, let. Juste nom = valeur. Python est le seul grand langage aussi simple pour la déclaration de variables.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que vaut x après ces deux lignes ? x = 10 ; x += 5</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>10</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>15</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>5</div>
+</div>
+<div class="quiz-explanation">✅ x += 5 est équivalent à x = x + 5. Donc x = 10 + 5 = 15.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que fait type(age) si age = 27 ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Affiche "27"</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Affiche &lt;class 'int'&gt;</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Change le type de age</div>
+</div>
+<div class="quiz-explanation">✅ type() retourne le type de la valeur stockée dans la variable. Pour un entier comme 27, c'est &lt;class 'int'&gt;.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE</div>
+<div class="ls-content">
+<p>Crée un programme qui simule la progression d'un score :</p>
+<pre>score = 0
+print(f"Debut : {score}")
+score += 50      # premier exercice complété
+score += 30      # deuxième exercice
+score *= 2       # bonus doubleur !
+score -= 20      # pénalité erreur
+print(f"Final : {score}")
+print(f"Type : {type(score)}")</pre>
+<p>Calcule mentalement le résultat final avant d'exécuter. Puis modifie les valeurs et essaie avec tes propres chiffres.</p>
+</div>
+</div>
+
+`,
 
 'N1M1L3': `
-<div class="ls ls-why"><div class="ls-title">💡 BIEN NOMMER SES VARIABLES</div><div class="ls-content"><p>Un mauvais nom de variable rend le code illisible. Un bon nom le rend clair et professionnel.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 LES RÈGLES</div><div class="ls-content"><pre>age_patient = 25    # OK — snake_case
-agePatient = 25     # OK — camelCase (moins courant en Python)
-age patient = 25    # ERREUR — espace interdit
-age = 25            # OK — accent interdit dans les pro
-2age = 25           # ERREUR — commence par un chiffre</pre></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LES CONVENTIONS PYTHON</div><div class="ls-content"><p>Python utilise le <strong>snake_case</strong> : tout en minuscule, mots séparés par underscores.</p><pre>nom_du_patient = "Dupont"   # Recommande
-NB_MAX = 100                 # MAJUSCULES = constante
-# Mots reserves interdits :
-# if = 5   for = 10   print = 3   (erreurs !)</pre><p>Sois descriptif : <code>age_patient</code> plutôt que <code>a</code> ou <code>x</code>.</p></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Quel nom est valide en Python ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>2eme_patient</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>deuxieme_patient</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>deuxieme-patient</div></div><div class="quiz-explanation">✅ Pas de chiffre au début, pas d'accents, pas de tirets. Seuls les underscores séparent les mots.</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 8 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+20 XP</span></div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 LES 3 CONVENTIONS DE NOMMAGE</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Convention</th><th>Exemple</th><th>Utilisé pour</th></tr>
+<tr><td><strong>snake_case</strong></td><td><code>nom_patient, prix_total</code></td><td>Variables et fonctions (standard Python)</td></tr>
+<tr><td><strong>SCREAMING_SNAKE</strong></td><td><code>TVA, MAX_PATIENTS</code></td><td>Constantes (valeurs qui ne changent pas)</td></tr>
+<tr><td><strong>PascalCase</strong></td><td><code>PatientRecord, CabinetManager</code></td><td>Classes (plus tard dans le cours)</td></tr>
+</table>
+<div class="ls-note"><strong>La règle d'or :</strong> utilise toujours snake_case pour tes variables. C'est le standard PEP 8 — la bible du style Python.</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LES RÈGLES ABSOLUES (obligatoires)</div>
+<div class="ls-content">
+<p>Ces règles ne sont pas des conventions — ce sont des contraintes techniques. Les violer provoque une erreur :</p>
+<ul>
+<li>✅ Commence par une lettre ou un underscore : <code>age</code>, <code>_age</code></li>
+<li>✅ Peut contenir lettres, chiffres, underscores : <code>age_2024</code></li>
+<li>❌ Ne commence pas par un chiffre : <code>2eme_patient</code> → SyntaxError</li>
+<li>❌ Pas d'espaces : <code>mon age</code> → SyntaxError</li>
+<li>❌ Pas de caractères spéciaux : <code>prix-total</code>, <code>nom@patient</code> → SyntaxError</li>
+<li>❌ Pas de mots réservés Python (voir ci-dessous)</li>
+</ul>
+<p><strong>Mots réservés Python (ne jamais les utiliser comme nom de variable) :</strong></p>
+<pre>if, else, elif, for, while, def, class, return, import, from,
+True, False, None, and, or, not, in, is, try, except, pass,
+break, continue, lambda, with, as, yield, del, raise, global</pre>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 BONS ET MAUVAIS NOMS</div>
+<div class="ls-content">
+<div class="compare-grid">
+<div class="compare-bad">
+<div class="compare-label">❌ Noms à éviter</div>
+<pre>a = 27         # trop vague
+x2 = "Martin"  # non descriptif
+data = [...]   # trop générique
+temp = 98.6    # ambigu
+</pre>
+</div>
+<div class="compare-good">
+<div class="compare-label">✅ Bons noms</div>
+<pre>age_patient = 27
+nom_patient = "Martin"
+liste_patients = [...]
+temperature_celsius = 98.6</pre>
+</div>
+</div>
+<p>La règle : quelqu'un lisant ton code pour la première fois doit comprendre immédiatement ce que contient chaque variable.</p>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ CONSEILS DE PROFESSIONNEL</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><strong>Nomme en anglais</strong> dans les projets d'équipe (code universel), en français dans tes projets perso</li>
+<li><strong>Évite les abréviations sauf standards</strong> : <code>nb_patients</code> ok, mais <code>n</code> seul non</li>
+<li><strong>La longueur n'est pas un problème</strong> : <code>duree_traitement_en_mois</code> est parfait</li>
+<li><strong>Singulier vs pluriel</strong> : <code>patient</code> pour un seul, <code>patients</code> pour une liste</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Variables → snake_case (mots_séparés_underscores, minuscules)</li>
+<li>Constantes → MAJUSCULES (TVA = 0.20)</li>
+<li>Règles obligatoires : commence par lettre/underscore, pas d'espaces, pas de mots réservés</li>
+<li>Choisir un nom descriptif qui explique ce que contient la variable</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Lequel de ces noms provoque une SyntaxError ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">A</div>2eme_patient</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>patient_2</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>_patient</div>
+</div>
+<div class="quiz-explanation">✅ Un nom de variable ne peut pas commencer par un chiffre. 2eme_patient est invalide. patient_2 (chiffre au milieu) et _patient (commence par underscore) sont tous les deux valides.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Comment noter une constante TVA de 20% en Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>tva = 0.20</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>TVA = 0.20</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>const_tva = 0.20</div>
+</div>
+<div class="quiz-explanation">✅ Les constantes s'écrivent en MAJUSCULES par convention PEP 8. TVA = 0.20 signale clairement que cette valeur ne doit pas être modifiée.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — RENOMMER ET AMÉLIORER</div>
+<div class="ls-content">
+<p>Ce code fonctionne mais a de très mauvais noms de variables. Réécris-le avec des noms professionnels :</p>
+<pre># Code à améliorer
+a = "Paul Martin"
+b = 45
+c = "Bagues metalliques"
+d = 24
+e = 95
+f = d * e
+print(f"{a}: {c}, {d} mois, {f} euros")</pre>
+<p>Indice : c'est un dossier patient avec nom, âge, traitement, durée, tarif mensuel, coût total.</p>
+</div>
+</div>
+
+`,
 
 'N1M2L1': `
-<div class="ls ls-why"><div class="ls-title">💡 LES ENTIERS : LA BASE DU CALCUL</div><div class="ls-content"><p>Les nombres entiers (int) sont partout : compter des patients, calculer des scores, contrôler des boucles.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 C'EST QUOI UN INT ?</div><div class="ls-content"><pre>nb_patients = 42
-age = 27
-annee = 2025
-temperature = -5    # Peut être négatif</pre><p>Pas de guillemets — juste le nombre directement.</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LES OPÉRATIONS</div><div class="ls-content"><pre>a, b = 10, 3
-print(a + b)   # 13  addition
-print(a - b)   # 7   soustraction
-print(a * b)   # 30  multiplication
-print(a / b)   # 3.333 division (float !)
-print(a // b)  # 3   division entiere
-print(a % b)   # 1   modulo (reste)
-print(a ** b)  # 1000 puissance (10 cube)
 
-# Raccourcis :
-score = 100
-score += 10    # score = 110
-score -= 5     # score = 105</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Que donne 17 // 5 ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>3.4</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>3</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>2</div></div><div class="quiz-explanation">✅ // est la division entière. 5 entre 3 fois dans 17, donc 17 // 5 = 3.</div></div></div>`,
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+25 XP</span></div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 LES ENTIERS — NOMBRES SANS VIRGULE</div>
+<div class="ls-content">
+<p>Un entier (<code>int</code>) est un nombre sans partie décimale : 1, 42, -7, 1000000. En Python, les entiers peuvent être <strong>aussi grands que tu veux</strong> — pas de limite ! (Contrairement à Java ou C++ qui ont des limites fixes.)</p>
+<pre>age = 27
+nombre_patients = 1500
+annee = 2024
+temperature = -3
+milliard = 1_000_000_000  # underscores pour la lisibilité</pre>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 TOUTES LES OPÉRATIONS SUR LES ENTIERS</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Opérateur</th><th>Nom</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>+</code></td><td>Addition</td><td><code>10 + 3</code></td><td>13</td></tr>
+<tr><td><code>-</code></td><td>Soustraction</td><td><code>10 - 3</code></td><td>7</td></tr>
+<tr><td><code>*</code></td><td>Multiplication</td><td><code>10 * 3</code></td><td>30</td></tr>
+<tr><td><code>/</code></td><td>Division (renvoie float)</td><td><code>10 / 3</code></td><td>3.3333...</td></tr>
+<tr><td><code>//</code></td><td>Division entière (plancher)</td><td><code>10 // 3</code></td><td>3</td></tr>
+<tr><td><code>%</code></td><td>Modulo (reste)</td><td><code>10 % 3</code></td><td>1</td></tr>
+<tr><td><code>**</code></td><td>Puissance</td><td><code>2 ** 10</code></td><td>1024</td></tr>
+<tr><td><code>abs()</code></td><td>Valeur absolue</td><td><code>abs(-15)</code></td><td>15</td></tr>
+</table>
+<div class="ls-note"><strong>Ordre des opérations (PEMDAS) :</strong> Parenthèses → Puissances → *, / → +, -. Comme en maths : <code>2 + 3 * 4 = 14</code> (pas 20).</div>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 LES OPÉRATIONS EN ACTION</div>
+<div class="ls-content">
+<pre>a, b = 17, 5
+
+print(a + b)    # 22
+print(a - b)    # 12
+print(a * b)    # 85
+print(a / b)    # 3.4  (float !)
+print(a // b)   # 3    (entier seulement)
+print(a % b)    # 2    (reste de 17/5)
+print(a ** 2)   # 289  (17 au carré)
+print(abs(-42)) # 42</pre>
+<p style="margin-top:12px"><strong>Le modulo % est très utile :</strong></p>
+<pre># Savoir si un nombre est pair ou impair
+nombre = 42
+if nombre % 2 == 0:
+    print("Pair")
+else:
+    print("Impair")</pre>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 CALCULS MÉDICAUX PRATIQUES</div>
+<div class="ls-content">
+<pre>age_patient = 14
+duree_traitement = 20  # mois
+
+# Age en fin de traitement
+mois_restants = duree_traitement
+annees_restantes = mois_restants // 12
+mois_supplementaires = mois_restants % 12
+age_fin = age_patient + annees_restantes
+
+print(f"Debut traitement : {age_patient} ans")
+print(f"Duree : {annees_restantes} an(s) et {mois_supplementaires} mois")
+print(f"Fin de traitement : {age_fin} ans environ")
+
+# Nombre de séances
+seances_par_mois = 2
+total_seances = duree_traitement * seances_par_mois
+print(f"Seances prevues : {total_seances}")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Debut traitement : 14 ans
+Duree : 1 an(s) et 8 mois
+Fin de traitement : 15 ans environ
+Seances prevues : 40</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>int = nombre entier, sans virgule, sans limite de taille en Python</li>
+<li><code>/</code> retourne toujours un float ; <code>//</code> retourne un int (division entière)</li>
+<li><code>%</code> retourne le reste de la division — très utile pour tester pair/impair, cycles</li>
+<li><code>**</code> pour les puissances : 2**10 = 1024</li>
+<li>Ordre des opérations : parenthèses d'abord, puis puissances, puis * et /, puis + et -</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que vaut 17 // 5 en Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>3.4</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>3</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>2</div>
+</div>
+<div class="quiz-explanation">✅ // est la division entière (floor division). 17 // 5 = 3 (partie entière de 3.4). Le reste serait 17 % 5 = 2.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Comment vérifier si un nombre est divisible par 7 ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>nombre / 7 == 0</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>nombre % 7 == 0</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>nombre // 7 == 0</div>
+</div>
+<div class="quiz-explanation">✅ Le modulo % retourne le reste. Si nombre % 7 == 0, le reste est nul, donc le nombre est divisible par 7.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que vaut 2 + 3 * 4 en Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>20</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>14</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>24</div>
+</div>
+<div class="quiz-explanation">✅ L'ordre des opérations : * avant +. Donc 3 * 4 = 12, puis 2 + 12 = 14. Pour forcer l'addition d'abord : (2 + 3) * 4 = 20.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE</div>
+<div class="ls-content">
+<p>Écris un programme qui calcule, pour un traitement de 23 mois :</p>
+<ol>
+<li>Le nombre d'années complètes et de mois restants</li>
+<li>Le nombre total de séances (2 par mois)</li>
+<li>Le coût total (95€ par séance)</li>
+<li>Le coût par semaine (arrondi à l'entier)</li>
+<li>Si le nombre total de séances est pair ou impair</li>
+</ol>
+</div>
+</div>
+
+`,
 
 'N1M2L2': `
-<div class="ls ls-why"><div class="ls-title">💡 LES DÉCIMAUX</div><div class="ls-content"><p>En médecine, la précision est essentielle. Le type <strong>float</strong> permet de travailler avec des nombres à virgule.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 C'EST QUOI UN FLOAT ?</div><div class="ls-content"><pre>poids = 70.5      # 70,5 kg
-taille = 1.75     # 1m75 en metres
-imc = 22.8
-temperature = 37.2</pre><p>En Python : point décimal (pas virgule). <code>70.5</code> et non <code>70,5</code>.</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 INT ET FLOAT ENSEMBLE</div><div class="ls-content"><pre>a = 10
-b = 3.0
-print(a + b)    # 13.0 (devient float)
-print(a / 2)    # 5.0  (/ donne TOUJOURS float)
 
-# Conversions :
-x = int(3.7)    # 3 (coupe, n'arrondit pas)
-y = float(10)   # 10.0
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 8 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+20 XP</span></div>
 
-# Arrondir :
-imc = 70.5 / (1.75 ** 2)
-print(round(imc, 1))  # 23.0</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Que donne int(9.9) ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>10 (arrondi)</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>9 (coupe la décimale)</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>9.0</div></div><div class="quiz-explanation">✅ int() coupe la décimale sans arrondir. Pour arrondir, utilise round().</div></div></div>`,
+<div class="ls ls-simple">
+<div class="ls-title">🧠 FLOAT = NOMBRES AVEC VIRGULE</div>
+<div class="ls-content">
+<p>Un float (nombre flottant) est un nombre avec une partie décimale : 3.14, 1.78, -0.5, 99.99. Python les crée automatiquement dès qu'il y a une virgule (ou une division normale avec /).</p>
+<pre>taille = 1.78        # float
+prix = 99.99         # float
+pi = 3.14159         # float
+result = 10 / 4      # float = 2.5 (/ retourne toujours float)</pre>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LE PIÈGE DE LA PRÉCISION FLOTTANTE</div>
+<div class="ls-content">
+<p>Les ordinateurs stockent les nombres en binaire (0 et 1). Certains décimaux ne peuvent pas être représentés exactement en binaire — comme 1/3 en décimal donne 0.333333...</p>
+<pre>print(0.1 + 0.2)     # affiche 0.30000000000000004 !
+print(0.1 + 0.2 == 0.3)  # False !</pre>
+<p>C'est un comportement <strong>normal et universel</strong> dans tous les langages (JavaScript, Java, C++ ont le même problème). La solution :</p>
+<pre>from decimal import Decimal
+print(Decimal('0.1') + Decimal('0.2'))  # 0.3 exact
+
+# Ou pour l'affichage : round()
+result = 0.1 + 0.2
+print(round(result, 2))  # 0.3
+print(f"{result:.2f}")   # 0.30</pre>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 FONCTIONS UTILES POUR LES FLOATS</div>
+<div class="ls-content">
+<pre>import math
+
+prix = 97.456789
+
+print(round(prix, 2))       # 97.46 (arrondi à 2 décimales)
+print(round(prix))          # 97    (arrondi à l'entier le plus proche)
+print(math.ceil(prix))      # 98    (arrondi vers le haut)
+print(math.floor(prix))     # 97    (arrondi vers le bas)
+print(int(prix))            # 97    (coupe la partie décimale)
+print(f"{prix:.1f}")        # 97.5  (1 décimale)
+print(f"{prix:.0f}")        # 97    (0 décimale)</pre>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 CALCULS FINANCIERS PRÉCIS</div>
+<div class="ls-content">
+<pre># Calcul de devis orthodontique
+duree_mois = 18
+tarif_mensuel = 95.50
+TVA = 0.20
+
+sous_total = duree_mois * tarif_mensuel
+tva_montant = sous_total * TVA
+total_ttc = sous_total + tva_montant
+acompte = total_ttc * 0.30  # 30% d'acompte
+
+print(f"Sous-total HT  : {sous_total:.2f} euros")
+print(f"TVA (20%)      : {tva_montant:.2f} euros")
+print(f"Total TTC      : {total_ttc:.2f} euros")
+print(f"Acompte (30%)  : {round(acompte, 2):.2f} euros")
+print(f"Reste a payer  : {total_ttc - acompte:.2f} euros")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Sous-total HT  : 1719.00 euros
+TVA (20%)      : 343.80 euros
+Total TTC      : 2062.80 euros
+Acompte (30%)  : 618.84 euros
+Reste a payer  : 1443.96 euros</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>float = nombre avec virgule (3.14, 1.78, -0.5)</li>
+<li>La division / renvoie toujours un float en Python 3</li>
+<li>0.1 + 0.2 n'est pas exactement 0.3 — c'est normal (limitation binaire)</li>
+<li>round(nombre, nb_décimales) pour arrondir</li>
+<li>f"{valeur:.2f}" pour afficher avec 2 décimales</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que retourne 10 / 4 en Python 3 ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>2 (un entier)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>2.5 (un float)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Une erreur</div>
+</div>
+<div class="quiz-explanation">✅ En Python 3, / retourne toujours un float. 10 / 4 = 2.5. Pour obtenir un entier, utilise // (division entière) : 10 // 4 = 2.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Comment afficher le float 3.14159 avec seulement 2 décimales ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>print(2(3.14159))</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>print(f"{3.14159:.2f}")</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>print(float(3.14159, 2))</div>
+</div>
+<div class="quiz-explanation">✅ La syntaxe f-string :.2f signifie "affiche avec 2 décimales en format float". C'est le moyen le plus propre et le plus utilisé en Python moderne.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE</div>
+<div class="ls-content">
+<p>Crée un calculateur de TVA pour cabinet médical :</p>
+<ul>
+<li>Demande un montant HT (utilise une variable fixe pour commencer)</li>
+<li>Calcule avec TVA 20%</li>
+<li>Affiche : HT, TVA, TTC — tous avec 2 décimales</li>
+<li>Affiche aussi le prix par mois si payé en 12 fois</li>
+</ul>
+</div>
+</div>
+
+`,
 
 'N1M2L3': `
-<div class="ls ls-why"><div class="ls-title">💡 LE TEXTE EN PYTHON</div><div class="ls-content"><p>La majorité des données réelles sont du texte : noms, adresses, messages. Maîtriser str est indispensable.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 C'EST QUOI UN STR ?</div><div class="ls-content"><pre>nom = "Bryan"
-ville = 'Nice'        # Simples ou doubles guillemets
-message = "Bonjour !"
-vide = ""             # Chaine vide</pre></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LES OPÉRATIONS</div><div class="ls-content"><pre>prenom = "Bryan"
-print(prenom.upper())     # BRYAN
-print(prenom.lower())     # bryan
-print(len(prenom))        # 5
-print("an" in prenom)     # True
-print(prenom + " Faruch") # Bryan Faruch
 
-# F-strings (recommandes) :
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 12 min</span><span class="ls-meta-diff">🟡 Débutant+</span><span class="ls-meta-xp">+30 XP</span></div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 LES STRINGS — TEXTE EN PYTHON</div>
+<div class="ls-content">
+<p>Un string (str) est une suite de caractères entre guillemets. C'est le type de données que tu utiliseras le plus — noms, messages, adresses, rapports, tout ce qui est texte.</p>
+<pre>nom = "Bryan Faruch"
+ville = 'Nice'              # simples ou doubles, même résultat
+message = "Bonjour M. " + nom  # concaténation
+texte_long = '''Ceci est un texte
+sur plusieurs lignes
+c'est possible aussi.'''</pre>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LES MÉTHODES ESSENTIELLES DES STRINGS</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Méthode</th><th>Rôle</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>.upper()</code></td><td>Tout en majuscules</td><td><code>"bonjour".upper()</code></td><td>"BONJOUR"</td></tr>
+<tr><td><code>.lower()</code></td><td>Tout en minuscules</td><td><code>"BONJOUR".lower()</code></td><td>"bonjour"</td></tr>
+<tr><td><code>.capitalize()</code></td><td>Première lettre majuscule</td><td><code>"bryan".capitalize()</code></td><td>"Bryan"</td></tr>
+<tr><td><code>.strip()</code></td><td>Supprime espaces début/fin</td><td><code>"  hello  ".strip()</code></td><td>"hello"</td></tr>
+<tr><td><code>.replace(a, b)</code></td><td>Remplace a par b</td><td><code>"bon matin".replace("matin","soir")</code></td><td>"bon soir"</td></tr>
+<tr><td><code>.split(sep)</code></td><td>Découpe en liste</td><td><code>"a,b,c".split(",")</code></td><td>["a","b","c"]</td></tr>
+<tr><td><code>len()</code></td><td>Longueur du string</td><td><code>len("bonjour")</code></td><td>7</td></tr>
+<tr><td><code>.count(x)</code></td><td>Compte les occurrences</td><td><code>"banana".count("a")</code></td><td>3</td></tr>
+<tr><td><code>.startswith(x)</code></td><td>Commence par x ?</td><td><code>"Bonjour".startswith("B")</code></td><td>True</td></tr>
+<tr><td><code>.in</code></td><td>Contient ?</td><td><code>"a" in "banana"</code></td><td>True</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 F-STRINGS — LA FAÇON MODERNE</div>
+<div class="ls-content">
+<p>Les f-strings (format strings) sont la manière moderne d'insérer des variables dans du texte. Préfixe <code>f</code> avant le guillemet, variables entre <code>{}</code> .</p>
+<pre>prenom = "Bryan"
 age = 27
-print(f"Je m'appelle {prenom}, j'ai {age} ans.")
-print(f"Dans 10 ans : {age + 10} ans")
-imc = 22.857
-print(f"IMC : {imc:.1f}")   # 22.9</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Que donne len("Orthodontie") ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>10</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>11</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>12</div></div><div class="quiz-explanation">✅ O-r-t-h-o-d-o-n-t-i-e = 11 caractères.</div></div></div>`,
+taille = 1.78
+
+# Ancienne façon (à éviter)
+print("Bonjour " + prenom + ", tu as " + str(age) + " ans.")
+
+# Façon moderne : f-strings
+print(f"Bonjour {prenom}, tu as {age} ans.")
+print(f"Taille : {taille:.2f} m")
+print(f"Dans 10 ans : {age + 10} ans")  # calculs directs dans {}</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Bonjour Bryan, tu as 27 ans.
+Taille : 1.78 m
+Dans 10 ans : 37 ans</div>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 GÉNÉRATION DE RAPPORTS TEXTUELS</div>
+<div class="ls-content">
+<pre>def rapport_patient(nom, age, traitement, duree, cout):
+    nom_formate = nom.strip().title()  # normalise le nom
+    separateur = "-" * 40
+
+    rapport = f'''
+{separateur}
+RAPPORT DE TRAITEMENT ORTHODONTIQUE
+{separateur}
+Patient    : {nom_formate}
+Age        : {age} ans
+Traitement : {traitement.upper()}
+Duree      : {duree} mois
+Cout total : {cout:.2f} euros
+Cout/mois  : {cout/duree:.2f} euros
+{separateur}
+'''
+    return rapport
+
+# Utilisation
+print(rapport_patient("  martin dupont  ", 16, "aligneurs", 14, 1540.0))</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">----------------------------------------
+RAPPORT DE TRAITEMENT ORTHODONTIQUE
+----------------------------------------
+Patient    : Martin Dupont
+Age        : 16 ans
+Traitement : ALIGNEURS
+Duree      : 14 mois
+Cout total : 1540.00 euros
+Cout/mois  : 110.00 euros
+----------------------------------------</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>str = suite de caractères entre guillemets simples ou doubles</li>
+<li>f-strings = façon moderne d'insérer des variables : f"Bonjour {nom}"</li>
+<li>Méthodes essentielles : .upper(), .lower(), .strip(), .replace(), .split()</li>
+<li>len() pour la longueur, "x" in string pour tester la présence</li>
+<li>Les strings sont immutables — chaque méthode crée un nouveau string</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que retourne "  bonjour  ".strip() ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>"  bonjour  " (inchangé)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>"bonjour"</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>["bonjour"]</div>
+</div>
+<div class="quiz-explanation">✅ .strip() supprime les espaces (et autres caractères blancs) au début et à la fin du string. Très utile pour nettoyer des données saisies par l'utilisateur.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Comment écrire un f-string qui affiche "J'ai 27 ans" avec une variable age=27 ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>print("J'ai " + age + " ans")</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>print(f"J'ai {age} ans")</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>print("J'ai {age} ans")</div>
+</div>
+<div class="quiz-explanation">✅ Les f-strings nécessitent le préfixe f avant le guillemet. Sans le f, les accolades {} sont affichées telles quelles et ne sont pas interprétées.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que fait "Martin Dupont".split(" ") ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Supprime l'espace</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>Retourne ["Martin", "Dupont"]</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Retourne ("Martin", "Dupont")</div>
+</div>
+<div class="quiz-explanation">✅ .split() découpe le string à chaque occurrence du séparateur et retourne une liste. "Martin Dupont".split(" ") donne ["Martin", "Dupont"].</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — TRAITEMENT DE DONNÉES PATIENT</div>
+<div class="ls-content">
+<p>Tu reçois ce string depuis un formulaire : <code>nom_brut = "  DUPONT martin   "</code></p>
+<p>Écris un programme qui :</p>
+<ol>
+<li>Nettoie les espaces en trop (.strip())</li>
+<li>Met le nom en format titre (.title()) : "Dupont Martin"</li>
+<li>Sépare prénom et nom (.split())</li>
+<li>Affiche une salutation : "Bonjour M. Martin Dupont !"</li>
+<li>Vérifie si "martin" est dans le nom original (insensible à la casse)</li>
+</ol>
+</div>
+</div>
+
+`,
 
 'N1M2L4': `
-<div class="ls ls-why"><div class="ls-title">💡 VRAI OU FAUX</div><div class="ls-content"><p>Les booléens sont la base de toute logique. Sans True/False, impossible de prendre des décisions en code.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 L'INTERRUPTEUR</div><div class="ls-content"><p>Un booléen = un interrupteur : <strong>True</strong> (allumé) ou <strong>False</strong> (éteint).</p><pre>patient_adulte = True
-rendez_vous_confirme = False</pre><p>Important : majuscule sur True et False !</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 LES COMPARAISONS RETOURNENT DES BOOL</div><div class="ls-content"><pre>age = 20
-print(age >= 18)   # True
-print(age == 30)   # False
-print(age != 20)   # False
 
-# Utilisation avec if :
-traitement_actif = True
-if traitement_actif:
-    print("Patient en traitement")</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">10 > 5 and 3 == 3 vaut :</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">A</div>True</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>False</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>Erreur</div></div><div class="quiz-explanation">✅ 10>5 est True ET 3==3 est True. True AND True = True.</div></div></div>`,
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟡 Débutant+</span><span class="ls-meta-xp">+25 XP</span></div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 LES BOOLÉENS — VRAI OU FAUX</div>
+<div class="ls-content">
+<p>Un booléen n'a que deux valeurs possibles : <code>True</code> (vrai) ou <code>False</code> (faux). C'est le type le plus simple de Python — deux états, comme un interrupteur. Mais c'est la base de toute logique conditionnelle.</p>
+<pre>majeur = True
+traitement_termine = False
+patient_present = True
+
+print(type(majeur))    # class 'bool'</pre>
+<div class="ls-note"><strong>Important :</strong> True et False commencent par une majuscule en Python. <code>true</code> ou <code>false</code> en minuscule = NameError !</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 OPÉRATEURS DE COMPARAISON</div>
+<div class="ls-content">
+<p>Ces opérateurs comparent deux valeurs et retournent True ou False :</p>
+<table class="concept-table">
+<tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>==</code></td><td>Égal à</td><td><code>5 == 5</code></td><td>True</td></tr>
+<tr><td><code>!=</code></td><td>Différent de</td><td><code>5 != 3</code></td><td>True</td></tr>
+<tr><td><code>&gt;</code></td><td>Supérieur à</td><td><code>10 &gt; 5</code></td><td>True</td></tr>
+<tr><td><code>&lt;</code></td><td>Inférieur à</td><td><code>3 &lt; 5</code></td><td>True</td></tr>
+<tr><td><code>&gt;=</code></td><td>Supérieur ou égal</td><td><code>18 &gt;= 18</code></td><td>True</td></tr>
+<tr><td><code>&lt;=</code></td><td>Inférieur ou égal</td><td><code>17 &lt;= 18</code></td><td>True</td></tr>
+</table>
+<p><strong>Opérateurs logiques (combiner des conditions) :</strong></p>
+<table class="concept-table">
+<tr><th>Opérateur</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>and</code></td><td>ET — les deux doivent être vrais</td><td><code>True and False</code></td><td>False</td></tr>
+<tr><td><code>or</code></td><td>OU — au moins un vrai</td><td><code>True or False</code></td><td>True</td></tr>
+<tr><td><code>not</code></td><td>NON — inverse</td><td><code>not True</code></td><td>False</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 BOOLÉENS ET CONDITIONS if</div>
+<div class="ls-content">
+<pre>age = 16
+poids = 45.0
+consentement_parental = True
+
+# Conditions simples
+majeur = age >= 18
+print(f"Majeur : {majeur}")          # False
+
+# Conditions combinées avec and/or
+peut_traiter = (age >= 12) and consentement_parental
+print(f"Peut traiter : {peut_traiter}")  # True
+
+# if/else avec booléens
+if peut_traiter:
+    print("Traitement autorise")
+else:
+    print("Traitement refuse")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Majeur : False
+Peut traiter : True
+Traitement autorise</div>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 SYSTÈME DE VALIDATION MÉDICALE</div>
+<div class="ls-content">
+<pre>def peut_demarrer_traitement(age, consentement, paiement_ok, rdv_pris):
+    # Vérification de chaque condition
+    age_ok = age >= 6
+    tout_ok = age_ok and consentement and paiement_ok and rdv_pris
+
+    if tout_ok:
+        return True, "Traitement peut demarrer"
+    else:
+        raisons = []
+        if not age_ok: raisons.append(f"age insuffisant ({age} ans, min 6)")
+        if not consentement: raisons.append("consentement manquant")
+        if not paiement_ok: raisons.append("paiement non confirme")
+        if not rdv_pris: raisons.append("rendez-vous non fixe")
+        return False, "Blocages : " + ", ".join(raisons)
+
+# Tests
+ok, msg = peut_demarrer_traitement(14, True, True, True)
+print(f"Patient A : {msg}")
+
+ok, msg = peut_demarrer_traitement(4, False, True, False)
+print(f"Patient B : {msg}")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">Patient A : Traitement peut demarrer
+Patient B : Blocages : age insuffisant (4 ans, min 6), consentement manquant, rendez-vous non fixe</div>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ VALEURS "FALSY" — CE QUI EST FAUX SANS ÊTRE False</div>
+<div class="ls-content">
+<p>En Python, certaines valeurs sont considérées comme False dans un contexte booléen :</p>
+<table class="concept-table">
+<tr><th>Valeur</th><th>Booléen équivalent</th></tr>
+<tr><td><code>0</code></td><td>False</td></tr>
+<tr><td><code>0.0</code></td><td>False</td></tr>
+<tr><td><code>""</code> (string vide)</td><td>False</td></tr>
+<tr><td><code>[]</code> (liste vide)</td><td>False</td></tr>
+<tr><td><code>None</code></td><td>False</td></tr>
+<tr><td>Tout le reste</td><td>True</td></tr>
+</table>
+<pre>nom = ""
+if nom:
+    print("Nom rempli")
+else:
+    print("Nom vide !")  # s'affiche car "" est falsy</pre>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>bool : True ou False (majuscule obligatoire)</li>
+<li>Opérateurs de comparaison : ==, !=, &gt;, &lt;, &gt;=, &lt;=</li>
+<li>Opérateurs logiques : and, or, not</li>
+<li>Les comparaisons retournent toujours True ou False</li>
+<li>Valeurs falsy : 0, "", [], None, 0.0</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quelle est la différence entre = et == en Python ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>Aucune différence</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>= affecte une valeur, == compare deux valeurs</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>== est plus fort que =</div>
+</div>
+<div class="quiz-explanation">✅ = est l'affectation (met une valeur dans une variable). == est la comparaison (retourne True si les deux côtés sont égaux). C'est une des confusions les plus fréquentes en débutant.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que vaut True and False ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">A</div>False</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">B</div>True</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>None</div>
+</div>
+<div class="quiz-explanation">✅ and retourne True seulement si les DEUX conditions sont True. True and False = False car la deuxième condition est fausse.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Parmi ces valeurs, laquelle est "falsy" (considérée comme False) ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>"0" (string)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>0 (entier)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>[0] (liste avec un zéro)</div>
+</div>
+<div class="quiz-explanation">✅ 0 (entier) est falsy. Mais "0" (string non vide) est truthy, et [0] (liste non vide) est aussi truthy. Seul l'entier zéro est faux.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE</div>
+<div class="ls-content">
+<p>Crée un système de validation de dossier patient avec ces règles :</p>
+<ul>
+<li>Age minimum : 6 ans</li>
+<li>Si mineur (moins de 18 ans) : consentement parental requis</li>
+<li>Dossier médical complété</li>
+<li>Radiographie récente (moins de 6 mois)</li>
+</ul>
+<p>Le programme doit afficher clairement si le dossier est complet, et lister tous les éléments manquants s'il ne l'est pas.</p>
+</div>
+</div>
+
+`,
 
 'N1M3L1': `
-<div class="ls ls-why"><div class="ls-title">💡 PYTHON = CALCULATRICE PUISSANTE</div><div class="ls-content"><p>Python peut faire toutes les opérations mathématiques. Maîtriser les opérateurs te permet de créer des calculs utiles immédiatement.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 LES OPÉRATEURS</div><div class="ls-content"><pre>a, b = 15, 4
-print(a + b)   # 19  addition
-print(a - b)   # 11  soustraction
-print(a * b)   # 60  multiplication
-print(a / b)   # 3.75 division (float)
-print(a // b)  # 3   entiere
-print(a % b)   # 3   modulo (reste)
-print(a ** b)  # 50625 puissance</pre></div></div>
-<div class="ls ls-example"><div class="ls-title">🏥 CALCULATRICE MÉDICALE</div><div class="ls-content"><pre>poids_kg = 70
-taille_m = 1.75
-imc = poids_kg / (taille_m ** 2)
-print(f"IMC : {round(imc, 1)}")</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Que vaut 2 + 3 * 4 ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>20</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>14</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>12</div></div><div class="quiz-explanation">✅ Multiplication avant addition. 3×4=12, puis 2+12=14.</div></div></div>`,
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟢 Débutant</span><span class="ls-meta-xp">+25 XP</span></div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 PYTHON — UNE CALCULATRICE SURPUISSANTE</div>
+<div class="ls-content">
+<p>Python peut remplacer ta calculatrice pour toutes les opérations du quotidien — et bien au-delà. La syntaxe est quasi identique aux mathématiques.</p>
+<pre>print(2 + 3)      # 5
+print(10 - 4)     # 6
+print(6 * 7)      # 42
+print(15 / 4)     # 3.75
+print(2 ** 10)    # 1024  (2 puissance 10)</pre>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 LE MODULE MATH — ALLER PLUS LOIN</div>
+<div class="ls-content">
+<pre>import math
+
+print(math.sqrt(144))     # 12.0  (racine carrée)
+print(math.pi)            # 3.141592653589793
+print(math.ceil(4.2))     # 5     (arrondi vers le haut)
+print(math.floor(4.8))    # 4     (arrondi vers le bas)
+print(math.log(100, 10))  # 2.0   (logarithme base 10)
+print(math.sin(math.pi))  # ~0    (sinus de π)</pre>
+<p><strong>Ordre de priorité des opérateurs :</strong></p>
+<table class="concept-table">
+<tr><th>Priorité</th><th>Opérateur</th><th>Exemple</th></tr>
+<tr><td>1 (plus haute)</td><td><code>()</code> Parenthèses</td><td><code>(2+3)*4 = 20</code></td></tr>
+<tr><td>2</td><td><code>**</code> Puissance</td><td><code>2**3 = 8</code></td></tr>
+<tr><td>3</td><td><code>* / // %</code></td><td><code>3*4+2 → 12+2</code></td></tr>
+<tr><td>4 (plus basse)</td><td><code>+ -</code></td><td><code>3+4-1 = 6</code></td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 CALCULS CLINIQUES PRATIQUES</div>
+<div class="ls-content">
+<pre>import math
+
+# IMC d'un patient
+poids = 62.5     # kg
+taille = 1.72    # m
+imc = poids / (taille ** 2)
+print(f"IMC : {imc:.1f}")
+if imc < 18.5:
+    print("Insuffisance ponderale")
+elif imc < 25:
+    print("Poids normal")
+elif imc < 30:
+    print("Surpoids")
+else:
+    print("Obesite")
+
+# Surface corporelle (formule de Mosteller)
+surface = math.sqrt((poids * taille * 100) / 3600)
+print(f"Surface corporelle : {surface:.2f} m2")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">IMC : 21.1
+Poids normal
+Surface corporelle : 1.09 m2</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>Opérateurs de base : +, -, *, /, //, %, **</li>
+<li>/ retourne toujours un float ; // retourne un int</li>
+<li>Ordre des opérations : parenthèses → ** → * / // % → + -</li>
+<li>import math pour fonctions avancées : sqrt(), ceil(), floor(), pi</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que vaut (2 + 3) ** 2 ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>11</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>25</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>13</div>
+</div>
+<div class="quiz-explanation">✅ Parenthèses d'abord : (2+3) = 5. Puis 5 ** 2 = 25. Sans parenthèses, 2 + 3 ** 2 = 2 + 9 = 11 (puissance avant addition).</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quelle fonction du module math calcule la racine carrée ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>math.root()</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>math.sqrt()</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>math.racine()</div>
+</div>
+<div class="quiz-explanation">✅ math.sqrt() (square root) calcule la racine carrée. math.sqrt(144) = 12.0. Il retourne toujours un float.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — CALCULATEUR CLINIQUE</div>
+<div class="ls-content">
+<p>Crée un calculateur qui, à partir du poids (kg) et de la taille (m) d'un patient :</p>
+<ol>
+<li>Calcule l'IMC (poids / taille²)</li>
+<li>Affiche la catégorie (insuffisance / normal / surpoids / obésité)</li>
+<li>Calcule le poids idéal (formule de Lorentz : taille*100 - 100 - (taille*100-150)/4 pour homme)</li>
+<li>Affiche l'écart entre poids actuel et poids idéal</li>
+</ol>
+</div>
+</div>
+
+`,
 
 'N1M3L2': `
-<div class="ls ls-why"><div class="ls-title">💡 ASSEMBLER DU TEXTE</div><div class="ls-content"><p>Combiner textes et variables est quotidien — pour afficher des messages, créer des rapports, générer des emails automatiques.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 3 FAÇONS DE COMBINER</div><div class="ls-content"><pre># 1. Concatenation :
-message = "Bonjour " + prenom + " !"
 
-# 2. print() avec virgules :
-print("J'ai", age, "ans")
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 10 min</span><span class="ls-meta-diff">🟡 Débutant+</span><span class="ls-meta-xp">+25 XP</span></div>
 
-# 3. f-strings (recommande) :
-print(f"Bonjour {prenom}, tu as {age} ans.")</pre></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 F-STRINGS EN DÉTAIL</div><div class="ls-content"><pre>prenom, age = "Bryan", 27
-print(f"Dans 10 ans : {age + 10} ans")
-imc = 22.857
-print(f"IMC : {imc:.2f}")   # 22.86
+<div class="ls ls-simple">
+<div class="ls-title">🧠 COMBINER DU TEXTE — 4 MÉTHODES</div>
+<div class="ls-content">
+<p>Il existe 4 façons de combiner du texte en Python. Connaître leurs différences te permettra de choisir la bonne selon le contexte.</p>
+<pre>nom = "Bryan"
+age = 27
 
-# ERREUR frequente :
-# "Age: " + 27    → TypeError !
-# Solution : f"Age: {age}" ou "Age: " + str(27)</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">Comment afficher correctement "Tu as 27 ans" ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>"Tu as " + 27 + " ans"</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>f"Tu as {age} ans"</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>"{age} ans"</div></div><div class="quiz-explanation">✅ Le f-string avec f"..." est la bonne méthode. Sans le f, les accolades s'affichent telles quelles.</div></div></div>`,
+# Méthode 1 : concaténation avec +
+msg1 = "Bonjour " + nom + " !"         # nécessite str()
+
+# Méthode 2 : f-string (recommandée)
+msg2 = f"Bonjour {nom}, {age} ans"     # la plus lisible
+
+# Méthode 3 : .format()
+msg3 = "Bonjour {}, {} ans".format(nom, age)
+
+# Méthode 4 : % (ancienne, à éviter)
+msg4 = "Bonjour %s, %d ans" % (nom, age)
+
+print(msg1, msg2, msg3, msg4, sep="
+")</pre>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 MAÎTRISER LES F-STRINGS EN DÉTAIL</div>
+<div class="ls-content">
+<table class="concept-table">
+<tr><th>Formatage</th><th>Signification</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>{val:.2f}</code></td><td>Float 2 décimales</td><td><code>f"{3.14159:.2f}"</code></td><td>"3.14"</td></tr>
+<tr><td><code>{val:d}</code></td><td>Entier</td><td><code>f"{42:d}"</code></td><td>"42"</td></tr>
+<tr><td><code>{val:10}</code></td><td>Largeur 10 (aligné gauche)</td><td><code>f"{'abc':10}"</code></td><td>"abc       "</td></tr>
+<tr><td><code>{val:&gt;10}</code></td><td>Aligné à droite</td><td><code>f"{'abc':&gt;10}"</code></td><td>"       abc"</td></tr>
+<tr><td><code>{val:^10}</code></td><td>Centré</td><td><code>f"{'abc':^10}"</code></td><td>"   abc    "</td></tr>
+<tr><td><code>{val:,}</code></td><td>Séparateur de milliers</td><td><code>f"{1500000:,}"</code></td><td>"1,500,000"</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 GÉNÉRATION DE TABLEAU FORMATÉ</div>
+<div class="ls-content">
+<pre>patients = [
+    ("Sophie Laurent", 16, 1540),
+    ("Pierre Dubois", 12, 2100),
+    ("Marie Petit", 22, 890),
+]
+
+print(f"{'NOM':<20} {'AGE':>5} {'COUT':>10}")
+print("-" * 38)
+total = 0
+for nom, age, cout in patients:
+    print(f"{nom:<20} {age:>5} {cout:>10,} euros")
+    total += cout
+print("-" * 38)
+print(f"{'TOTAL':<20} {'':>5} {total:>10,} euros")</pre>
+<div class="out-label">Résultat</div>
+<div class="out-block">NOM                    AGE       COUT
+--------------------------------------
+Sophie Laurent          16      1,540 euros
+Pierre Dubois           12      2,100 euros
+Marie Petit             22        890 euros
+--------------------------------------
+TOTAL                          4,530 euros</div>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>4 méthodes de combinaison texte : +, f-strings, .format(), % (ancien)</li>
+<li>f-strings = méthode recommandée en Python moderne (3.6+)</li>
+<li>f"{val:.2f}" pour 2 décimales, f"{val:,}" pour séparateur milliers</li>
+<li>f"{val:&gt;10}" pour aligner à droite sur 10 caractères</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Que vaut f"{1500000:,}" ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>"1500000"</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>"1,500,000"</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>"1.500.000"</div>
+</div>
+<div class="quiz-explanation">✅ Le formatage :, ajoute des virgules comme séparateurs de milliers (convention anglophone). Pour les nombres financiers, c'est très utile pour la lisibilité.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Comment concaténer un string et un entier sans f-string ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>"age : " + 27</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>"age : " + str(27)</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>"age : " & 27</div>
+</div>
+<div class="quiz-explanation">✅ On ne peut pas additionner un string et un int directement (TypeError). Il faut convertir l'entier en string avec str(). C'est l'une des raisons pour lesquelles les f-strings sont si pratiques — ils font cette conversion automatiquement.</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — RAPPORT FORMATÉ</div>
+<div class="ls-content">
+<p>Génère un rapport de facturation avec un tableau parfaitement aligné :</p>
+<ul>
+<li>Colonnes : Prestation, Durée, Prix unitaire, Total</li>
+<li>3 prestations au minimum</li>
+<li>Ligne de total en bas</li>
+<li>Tous les prix avec 2 décimales et séparateur de milliers</li>
+<li>Colonnes bien alignées (utilise les formatages :<, :>, :^)</li>
+</ul>
+</div>
+</div>
+
+`,
 
 'N1M3L3': `
-<div class="ls ls-why"><div class="ls-title">💡 PROGRAMMES INTERACTIFS</div><div class="ls-content"><p>Avec <strong>input()</strong>, ton programme peut répondre à l'utilisateur — c'est là que ça devient vraiment vivant.</p></div></div>
-<div class="ls ls-simple"><div class="ls-title">🧠 COMMENT FONCTIONNE INPUT()</div><div class="ls-content"><pre>prenom = input("Quel est ton prenom ? ")
-print("Bonjour " + prenom + " !")</pre><p>Le programme s'arrête, attend que l'utilisateur tape, puis continue.</p></div></div>
-<div class="ls ls-detailed"><div class="ls-title">📖 INPUT RETOURNE TOUJOURS DU TEXTE !</div><div class="ls-content"><pre># input() donne TOUJOURS un str !
-# Pour faire des calculs, convertir :
-age = int(input("Age ? "))
-poids = float(input("Poids (kg) ? "))
-print(f"Tu as {age} ans et peses {poids} kg.")</pre></div></div>
-<div class="ls ls-example"><div class="ls-title">🏥 FORMULAIRE PATIENT</div><div class="ls-content"><pre>nom = input("Nom du patient : ")
+
+<div class="ls-meta-bar"><span class="ls-meta-time">⏱ 12 min</span><span class="ls-meta-diff">🟡 Débutant+</span><span class="ls-meta-xp">+30 XP</span></div>
+
+<div class="ls ls-context">
+<div class="ls-title">🌍 INPUT() — RENDRE TES PROGRAMMES INTERACTIFS</div>
+<div class="ls-content">
+<p>Jusqu'ici, tes programmes utilisaient des valeurs fixes codées en dur. <code>input()</code> te permet de <strong>demander des informations à l'utilisateur en temps réel</strong> — c'est la différence entre un programme statique et une vraie application interactive.</p>
+</div>
+</div>
+
+<div class="ls ls-simple">
+<div class="ls-title">🧠 COMMENT FONCTIONNE input()</div>
+<div class="ls-content">
+<p><code>input()</code> affiche un message, attend que l'utilisateur tape quelque chose et appuie sur Entrée, puis retourne ce que l'utilisateur a tapé sous forme de <strong>string</strong>.</p>
+<pre>nom = input("Quel est ton nom ? ")
+print(f"Bonjour {nom} !")</pre>
+<div class="ls-note"><strong>Important :</strong> input() retourne TOUJOURS un string, même si l'utilisateur tape un nombre. Pour utiliser un nombre, il faut le convertir avec int() ou float().</div>
+</div>
+</div>
+
+<div class="ls ls-detailed">
+<div class="ls-title">📖 CONVERTIR L'INPUT — int(), float(), str()</div>
+<div class="ls-content">
+<pre>age_str = input("Quel age avez-vous ? ")
+print(type(age_str))        # str — toujours !
+
+# Conversion nécessaire pour les calculs
+age = int(age_str)           # convertit en entier
+taille = float(input("Taille en metres ? "))  # direct en une ligne
+
+# Maintenant on peut calculer
+annee_naissance = 2024 - age
+print(f"Vous etes ne en {annee_naissance}")
+
+imc = (float(input("Poids (kg) ? "))) / (taille ** 2)
+print(f"Votre IMC : {imc:.1f}")</pre>
+<table class="concept-table">
+<tr><th>Fonction</th><th>Convertit vers</th><th>Exemple</th><th>Résultat</th></tr>
+<tr><td><code>int("27")</code></td><td>Entier</td><td><code>int("27")</code></td><td>27</td></tr>
+<tr><td><code>float("3.14")</code></td><td>Décimal</td><td><code>float("3.14")</code></td><td>3.14</td></tr>
+<tr><td><code>str(42)</code></td><td>Texte</td><td><code>str(42)</code></td><td>"42"</td></tr>
+<tr><td><code>bool(1)</code></td><td>Booléen</td><td><code>bool(0)</code></td><td>False</td></tr>
+</table>
+</div>
+</div>
+
+<div class="ls ls-example">
+<div class="ls-title">💻 PROGRAMME INTERACTIF COMPLET</div>
+<div class="ls-content">
+<pre># Calculateur simple interactif
+print("=== CALCULATEUR PYTHON ===")
+nb1 = float(input("Premier nombre : "))
+operateur = input("Operation (+, -, *, /) : ")
+nb2 = float(input("Deuxieme nombre : "))
+
+if operateur == "+":
+    resultat = nb1 + nb2
+elif operateur == "-":
+    resultat = nb1 - nb2
+elif operateur == "*":
+    resultat = nb1 * nb2
+elif operateur == "/" and nb2 != 0:
+    resultat = nb1 / nb2
+else:
+    resultat = None
+    print("Operation invalide ou division par zero")
+
+if resultat is not None:
+    print(f"Resultat : {nb1} {operateur} {nb2} = {resultat}")</pre>
+</div>
+</div>
+
+<div class="ls ls-pro-example">
+<div class="ls-title">🏥 FORMULAIRE D'ADMISSION PATIENT INTERACTIF</div>
+<div class="ls-content">
+<pre>print("=" * 45)
+print("  FORMULAIRE D'ADMISSION PATIENT")
+print("  Cabinet Orthodontique Dr. Faruch")
+print("=" * 45)
+
+# Collecte des informations
+prenom = input("Prenom du patient : ").strip().capitalize()
+nom = input("Nom de famille : ").strip().upper()
 age = int(input("Age : "))
-motif = input("Motif : ")
-print(f"Patient : {nom}, {age} ans")
+motif = input("Motif de consultation : ").strip()
+
+# Traitement selon l'age
 if age < 18:
-    print("Mineur — accord parental requis")</pre></div></div>
-<div class="ls ls-quiz"><div class="ls-title">✅ QUIZ</div><div class="quiz-q"><div class="quiz-q-text">L'utilisateur tape "25" après input(). Quel type ?</div><div class="quiz-options"><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>int</div><div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>str</div><div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>float</div></div><div class="quiz-explanation">✅ input() retourne TOUJOURS un str. Pour avoir un int : int(input("Age ?"))</div></div></div>`,
+    tuteur = input("Nom du tuteur legal : ").strip()
+    consentement = input("Consentement signe ? (oui/non) : ").lower()
+    acc = consentement == "oui"
+else:
+    tuteur = None
+    acc = True
+
+# Résumé
+print("
+--- RECAPITULATIF ---")
+print(f"Patient    : {prenom} {nom}, {age} ans")
+print(f"Motif      : {motif}")
+if tuteur:
+    print(f"Tuteur     : {tuteur}")
+    print(f"Consentement : {'OK' if acc else 'MANQUANT'}")
+print("Dossier cree avec succes.")</pre>
+</div>
+</div>
+
+<div class="ls ls-tips">
+<div class="ls-title">⚡ VALIDATION DES ENTRÉES UTILISATEUR</div>
+<div class="ls-content">
+<ul class="tips-list">
+<li><strong>Toujours .strip()</strong> les inputs texte pour supprimer les espaces accidentels</li>
+<li><strong>Valider avant de convertir</strong> — si l'utilisateur tape "abc" et tu fais int(), ça plante</li>
+<li><strong>.isdigit()</strong> vérifie si un string ne contient que des chiffres</li>
+<li><strong>try/except</strong> (vu plus tard) pour gérer les erreurs de saisie proprement</li>
+</ul>
+<pre>age_str = input("Age : ").strip()
+if age_str.isdigit():
+    age = int(age_str)
+    print(f"Age enregistre : {age}")
+else:
+    print("Erreur : entrez un nombre entier")</pre>
+</div>
+</div>
+
+<div class="ls ls-summary">
+<div class="ls-title">📌 RÉSUMÉ</div>
+<div class="ls-content">
+<ul class="summary-points">
+<li>input() affiche un message et retourne ce que l'utilisateur tape (toujours un string)</li>
+<li>Convertir avec int() pour un entier, float() pour un décimal</li>
+<li>Toujours .strip() les inputs texte pour nettoyer les espaces</li>
+<li>Valider les entrées avant de les convertir pour éviter les crashes</li>
+</ul>
+</div>
+</div>
+
+<div class="ls ls-quiz">
+<div class="ls-title">✅ QUIZ</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Si l'utilisateur tape "25" dans un input(), quel est le type retourné ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>int</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>str</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>float</div>
+</div>
+<div class="quiz-explanation">✅ input() retourne TOUJOURS un string, même si l'utilisateur tape un nombre. Pour faire des calculs, il faut convertir avec int() ou float().</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Comment demander un nombre décimal à l'utilisateur ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>input.float("Valeur : ")</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>float(input("Valeur : "))</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>decimal(input("Valeur : "))</div>
+</div>
+<div class="quiz-explanation">✅ On appelle float() sur le résultat de input(). C'est une conversion directe. Si l'utilisateur tape "3.14", float("3.14") donne 3.14.</div>
+</div>
+<div class="quiz-q">
+<div class="quiz-q-text">Quelle méthode vérifie si un string ne contient que des chiffres ?</div>
+<div class="quiz-options">
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">A</div>.isnumber()</div>
+<div class="quiz-opt" onclick="answerQuiz(this,true)"><div class="quiz-opt-letter">B</div>.isdigit()</div>
+<div class="quiz-opt" onclick="answerQuiz(this,false)"><div class="quiz-opt-letter">C</div>.checkint()</div>
+</div>
+<div class="quiz-explanation">✅ .isdigit() retourne True si tous les caractères du string sont des chiffres. "123".isdigit() → True, "12.3".isdigit() → False (le point n'est pas un chiffre).</div>
+</div>
+</div>
+
+<div class="ls ls-exercise">
+<div class="ls-title">🎯 EXERCICE — QUESTIONNAIRE MÉDICAL</div>
+<div class="ls-content">
+<p>Crée un questionnaire médical interactif qui :</p>
+<ol>
+<li>Demande : prénom, nom, date de naissance (jour, mois, année séparément), poids, taille</li>
+<li>Calcule : l'age approximatif (2024 - année), l'IMC</li>
+<li>Classe l'IMC (insuffisance / normal / surpoids / obésité)</li>
+<li>Affiche un résumé complet formaté</li>
+</ol>
+</div>
+</div>
+
+<div class="ls ls-project">
+<div class="ls-title">🚀 MINI-PROJET — SYSTÈME D'ACCUEIL PATIENT COMPLET</div>
+<div class="ls-content">
+<p><strong>Contexte :</strong> Tu travailles dans un cabinet d'orthodontie et tu veux créer un programme d'accueil pour les nouveaux patients.</p>
+<p><strong>Le programme doit :</strong></p>
+<ul>
+<li>Afficher une bannière de bienvenue avec le nom du cabinet</li>
+<li>Collecter : nom complet, âge, coordonnées, motif de consultation</li>
+<li>Si mineur : collecter les coordonnées du tuteur légal</li>
+<li>Proposer 3 plages de rendez-vous et laisser le patient choisir</li>
+<li>Calculer la prochaine révision (6 mois après le RDV)</li>
+<li>Afficher un récapitulatif complet, formaté comme un vrai document</li>
+<li>Sauvegarder dans une variable "dossier" (dictionnaire — tu apprendras ça bientôt)</li>
+</ul>
+<div class="ls-note">Ce mini-projet est concret et utilisable en conditions réelles. Il mobilise toutes les compétences du Niveau 1 : variables, types, opérations, strings, booléens, et input(). Bravo d'avance pour cette réalisation professionnelle.</div>
+</div>
+</div>
+
+`,
 
 'N2M1L1': `
 <div class="ls ls-why">
